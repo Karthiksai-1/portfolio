@@ -41,7 +41,8 @@ export const Hero: React.FC = () => {
 
         <a
           href="/resume.pdf"
-          download="Nirudi_Sai_Karthikeya_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 px-5 py-2.5 rounded-xl font-medium shadow-sm transition-all text-sm"
         >
           <Download className="w-4 h-4 text-slate-500" />
