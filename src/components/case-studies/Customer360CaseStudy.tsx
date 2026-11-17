@@ -11,12 +11,12 @@ export const Customer360CaseStudy: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-900 selection:text-white">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-900 selection:text-white">
       {/* Context-Aware Sticky Navbar */}
       <Navbar />
 
       {/* Main Container - Centered */}
-      <main className="max-w-3xl mx-auto px-6 py-12 space-y-12">
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-10 sm:space-y-12">
         {/* Breadcrumb directly above project title */}
         <div className="text-left">
           <Link
@@ -39,7 +39,7 @@ export const Customer360CaseStudy: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 mt-2 mb-3 text-left">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mt-2 mb-3 text-left">
             Customer 360 &amp; Retention Analytics: SQL Dimensional Modeling &amp; RFM Cohorts
           </h1>
 
@@ -48,7 +48,7 @@ export const Customer360CaseStudy: React.FC = () => {
           </p>
 
           {/* 4-Column Balanced Metadata Box */}
-          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 text-left">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-4 sm:p-5 rounded-xl border border-slate-200/80 bg-white shadow-sm mt-6 text-left">
             <div>
               <div className="font-mono text-xs uppercase tracking-wider text-slate-400 text-left">Scope</div>
               <div className="text-slate-900 font-semibold mt-1 text-left text-xs leading-normal">Solo Architecture &amp; Implementation</div>
@@ -88,26 +88,26 @@ export const Customer360CaseStudy: React.FC = () => {
           </div>
           <h2 className="text-xl font-semibold tracking-tight text-slate-900 mb-3 text-left">Results &amp; Impact</h2>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div className="bg-white border border-slate-200 rounded-2xl py-6 px-4 shadow-sm text-center">
-              <div className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">500K+</div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="bg-white border border-slate-200/80 rounded-xl sm:rounded-2xl py-4 sm:py-6 px-3 sm:px-4 shadow-sm text-center">
+              <div className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">500K+</div>
               <div className="text-xs font-semibold text-slate-700 mt-1">Transactions Modeled</div>
-              <div className="text-xs text-slate-500 mt-0.5">Star Schema Warehouse</div>
+              <div className="text-[11px] sm:text-xs text-slate-500 mt-0.5">Star Schema Warehouse</div>
             </div>
-            <div className="bg-white border border-slate-200 rounded-2xl py-6 px-4 shadow-sm text-center">
-              <div className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">12 Mo</div>
+            <div className="bg-white border border-slate-200/80 rounded-xl sm:rounded-2xl py-4 sm:py-6 px-3 sm:px-4 shadow-sm text-center">
+              <div className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">12 Mo</div>
               <div className="text-xs font-semibold text-slate-700 mt-1">Cohort Matrix</div>
-              <div className="text-xs text-slate-500 mt-0.5">Lifecycle Decay Tracking</div>
+              <div className="text-[11px] sm:text-xs text-slate-500 mt-0.5">Lifecycle Decay Tracking</div>
             </div>
-            <div className="bg-white border border-slate-200 rounded-2xl py-6 px-4 shadow-sm text-center">
-              <div className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">11</div>
+            <div className="bg-white border border-slate-200/80 rounded-xl sm:rounded-2xl py-4 sm:py-6 px-3 sm:px-4 shadow-sm text-center">
+              <div className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">11</div>
               <div className="text-xs font-semibold text-slate-700 mt-1">RFM Segments</div>
-              <div className="text-xs text-slate-500 mt-0.5">Statistical Quintiles</div>
+              <div className="text-[11px] sm:text-xs text-slate-500 mt-0.5">Statistical Quintiles</div>
             </div>
-            <div className="bg-white border border-slate-200 rounded-2xl py-6 px-4 shadow-sm text-center">
-              <div className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">71%</div>
+            <div className="bg-white border border-slate-200/80 rounded-xl sm:rounded-2xl py-4 sm:py-6 px-3 sm:px-4 shadow-sm text-center">
+              <div className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">71%</div>
               <div className="text-xs font-semibold text-slate-700 mt-1">Revenue from Top 20%</div>
-              <div className="text-xs text-slate-500 mt-0.5">Champions &amp; Loyalists</div>
+              <div className="text-[11px] sm:text-xs text-slate-500 mt-0.5">Champions &amp; Loyalists</div>
             </div>
           </div>
 
@@ -168,8 +168,8 @@ export const Customer360CaseStudy: React.FC = () => {
           </p>
 
           {/* Clean Subtle Technical Blueprint */}
-          <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-6 overflow-x-auto shadow-sm">
-            <pre className="w-full max-w-full text-left mx-auto whitespace-pre font-mono text-[12px] leading-relaxed text-neutral-800">
+          <div className="w-full max-w-full overflow-x-auto rounded-xl border border-slate-200/80 bg-neutral-50 p-4 sm:p-6 font-mono text-[10px] sm:text-xs leading-relaxed whitespace-pre shadow-sm">
+            <pre className="w-full max-w-full text-left mx-auto whitespace-pre font-mono text-[10px] sm:text-xs leading-relaxed text-neutral-800">
 {`┌────────────────────────────────────────────────────────────────────────┐
 │             DIMENSIONAL STAR SCHEMA & RETENTION PIPELINE               │
 └────────────────────────────────────────────────────────────────────────┘

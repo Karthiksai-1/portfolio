@@ -3,7 +3,7 @@ import { profile } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-slate-200 bg-white py-8 text-slate-500 text-sm -mx-6 px-6 -mb-12 mt-16">
+    <footer className="border-t border-slate-200 bg-white py-8 text-slate-500 text-sm -mx-4 sm:-mx-6 px-4 sm:px-6 -mb-8 sm:-mb-12 md:-mb-16 mt-16 w-auto">
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Clean copyright text on the left */}
         <div className="text-slate-600 font-medium">

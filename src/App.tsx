@@ -16,12 +16,12 @@ import SupplyChainCaseStudy from './components/case-studies/SupplyChainCaseStudy
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white">
       {/* Sticky Root Navigation */}
       <Navbar />
 
       {/* Disciplined Canvas Container */}
-      <main className="max-w-4xl mx-auto px-6 py-12 md:py-16 space-y-16">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16 space-y-12 sm:space-y-16">
         <Hero />
         <ExperienceTimeline />
         <ProjectsSection />

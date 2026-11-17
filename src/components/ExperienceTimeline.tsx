@@ -20,7 +20,7 @@ export const ExperienceTimeline: React.FC = () => {
             className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 space-y-4"
           >
             {/* Header: Role, Company, Date */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
               <div>
                 <h3 className="text-slate-900 font-semibold text-lg">
                   {item.role}
@@ -30,7 +30,7 @@ export const ExperienceTimeline: React.FC = () => {
                 </div>
               </div>
 
-              <div className="inline-flex items-center text-xs font-mono text-slate-600 px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 self-start">
+              <div className="inline-flex items-center text-xs font-mono text-slate-600 px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 self-start sm:self-auto shrink-0">
                 {item.startDate} – {item.endDate}
               </div>
             </div>

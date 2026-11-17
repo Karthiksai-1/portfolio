@@ -27,7 +27,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 text-slate-900 transition-colors">
-      <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div className="max-w-4xl mx-auto px-4 py-3 sm:px-6 h-14 flex items-center justify-between w-full">
         {/* Left: Context-Aware Back Link or Logo/Name */}
         {isCaseStudy ? (
           <Link
@@ -49,11 +49,11 @@ export const Navbar: React.FC = () => {
         )}
 
         {/* Right Navigation & Actions */}
-        <div className="flex items-center gap-4 sm:gap-6">
-          {/* Hide anchor links on case studies */}
+        <div className="flex items-center gap-3 sm:gap-6">
+          {/* Hide anchor links on mobile and case studies */}
           {!isCaseStudy && (
             <>
-              <nav className="flex items-center gap-4 sm:gap-5 text-xs sm:text-sm text-slate-600">
+              <nav className="hidden md:flex items-center gap-6 text-sm text-slate-600">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
@@ -66,7 +66,7 @@ export const Navbar: React.FC = () => {
                 ))}
               </nav>
 
-              <div className="h-3.5 w-px bg-slate-200" />
+              <div className="hidden md:block h-3.5 w-px bg-slate-200" />
             </>
           )}
 
@@ -75,14 +75,14 @@ export const Navbar: React.FC = () => {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-slate-700 border border-slate-300 hover:bg-slate-100 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors"
+            className="flex items-center gap-1.5 text-slate-700 border border-slate-300 hover:bg-slate-100 px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-colors"
           >
             <FileText className="w-3.5 h-3.5 text-slate-500" />
             <span>Resume</span>
           </a>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2">
             <a
               href={profile.links.github}
               target="_blank"

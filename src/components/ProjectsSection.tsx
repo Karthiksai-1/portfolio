@@ -60,7 +60,7 @@ export const ProjectsSection: React.FC = () => {
           return (
             <div
               key={project.id}
-              className="flex flex-col justify-between h-full bg-white border border-slate-200/80 rounded-xl p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:border-slate-300 transition-all duration-300"
+              className="flex flex-col justify-between h-full bg-white border border-slate-200/80 rounded-xl p-4 sm:p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:border-slate-300 transition-all duration-300"
             >
               <div className="space-y-3">
                 {/* Top: Title and Domain Badge */}
@@ -93,12 +93,12 @@ export const ProjectsSection: React.FC = () => {
               </div>
 
               {/* Action Buttons: Compact & Aligned Horizontally */}
-              <div className="flex flex-wrap items-center gap-2 pt-3 mt-4 border-t border-slate-100">
+              <div className="flex flex-wrap items-center gap-2 pt-2 mt-4 border-t border-slate-100">
                 <a
                   href={codeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-slate-900 text-white hover:bg-slate-800 text-xs font-medium rounded-lg transition-colors shadow-sm"
+                  className="w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 bg-slate-900 text-white hover:bg-slate-800 text-xs font-medium rounded-lg transition-colors shadow-sm"
                 >
                   <Github className="w-3.5 h-3.5" />
                   <span>Code ↗</span>
@@ -108,7 +108,7 @@ export const ProjectsSection: React.FC = () => {
                 {project.caseStudyUrl && (
                   <Link
                     to={project.caseStudyUrl}
-                    className="w-fit px-4 py-2 inline-flex items-center gap-1.5 text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 hover:text-slate-900 text-xs font-medium rounded-lg transition-colors shadow-sm"
+                    className="w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 hover:text-slate-900 text-xs font-medium rounded-lg transition-colors shadow-sm"
                   >
                     <span>Case Study →</span>
                   </Link>
@@ -119,7 +119,7 @@ export const ProjectsSection: React.FC = () => {
                     href={project.liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 hover:text-slate-900 text-xs font-medium rounded-lg transition-colors shadow-sm"
+                    className="w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 hover:text-slate-900 text-xs font-medium rounded-lg transition-colors shadow-sm"
                   >
                     <ArrowUpRight className="w-3.5 h-3.5" />
                     <span>Live Demo</span>

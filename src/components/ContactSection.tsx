@@ -14,13 +14,13 @@ export const ContactSection: React.FC = () => {
       </div>
 
       {/* Clean standalone inline action items directly beneath text description */}
-      <div className="flex flex-wrap items-center gap-6 pt-2">
+      <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2">
         {/* Direct Email Link */}
         <a
           href={`mailto:${profile.email}`}
-          className="inline-flex items-center gap-2 text-sm font-medium text-slate-900 hover:text-blue-600 transition-colors"
+          className="inline-flex items-center gap-2 text-sm font-medium text-slate-900 hover:text-blue-600 transition-colors break-all sm:break-normal"
         >
-          <Mail className="w-4 h-4 text-slate-500" />
+          <Mail className="w-4 h-4 text-slate-500 shrink-0" />
           <span>{profile.email}</span>
         </a>
 
@@ -31,7 +31,7 @@ export const ContactSection: React.FC = () => {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
         >
-          <Linkedin className="w-4 h-4 text-slate-500" />
+          <Linkedin className="w-4 h-4 text-slate-500 shrink-0" />
           <span>LinkedIn ↗</span>
         </a>
       </div>

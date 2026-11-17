@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
 
       {/* Headline & Sub-headline */}
       <div className="space-y-2">
-        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
           {profile.name}
         </h1>
         <p className="text-base sm:text-lg font-medium text-slate-600">
@@ -26,14 +26,14 @@ export const Hero: React.FC = () => {
       </p>
 
       {/* Action Row */}
-      <div className="flex flex-wrap items-center gap-3 pt-2">
+      <div className="flex flex-wrap items-center gap-2.5 pt-2">
         <a
           href="#projects"
           onClick={(e) => {
             e.preventDefault();
             document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="inline-flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800 text-xs font-medium px-5 py-2.5 rounded-xl transition-colors shadow-sm"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-900 text-white hover:bg-slate-800 text-xs font-medium px-5 py-2.5 rounded-xl transition-colors shadow-sm text-center"
         >
           <span>View Projects</span>
           <ArrowRight className="w-4 h-4" />
@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 px-5 py-2.5 rounded-xl font-medium shadow-sm transition-all text-sm"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 px-5 py-2.5 rounded-xl font-medium shadow-sm transition-all text-sm text-center"
         >
           <Download className="w-4 h-4 text-slate-500" />
           <span>Resume</span>
@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
             e.preventDefault();
             document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 px-5 py-2.5 rounded-xl font-medium shadow-sm transition-all text-sm"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 px-5 py-2.5 rounded-xl font-medium shadow-sm transition-all text-sm text-center"
         >
           <Mail className="w-4 h-4 text-slate-500" />
           <span>Contact Me</span>
@@ -69,10 +69,10 @@ export const Hero: React.FC = () => {
             key={metric.label}
             className="bg-white border border-slate-200 shadow-sm rounded-xl p-4 text-center transition-all duration-300 hover:shadow-md hover:border-slate-300"
           >
-            <div className="text-2xl font-bold text-slate-900">
+            <div className="text-xl sm:text-2xl font-bold text-slate-900">
               {metric.value}
             </div>
-            <div className="text-xs text-slate-500 font-medium mt-1 leading-snug">
+            <div className="text-[11px] sm:text-xs text-slate-500 font-medium mt-1 leading-snug">
               {metric.label}
             </div>
           </div>
