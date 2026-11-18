@@ -8,6 +8,17 @@ export default {
   theme: {
     extend: {
       colors: {
+        canvas: '#FBF9F5',
+        surface: '#FFFFFF',
+        'border-warm': '#ECE7DF',
+        'text-primary': '#1C1917',
+        'text-muted': '#57534E',
+        accent: {
+          tint: '#FEF3C7',
+          text: '#92400E',
+        },
+        'accent-tint': '#FEF3C7',
+        'accent-text': '#92400E',
         brand: {
           50: '#eef2ff',
           100: '#e0e7ff',

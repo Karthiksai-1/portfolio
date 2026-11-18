@@ -5,10 +5,10 @@ export const EducationSection: React.FC = () => {
   return (
     <section id="education" className="space-y-6 pt-6">
       <div className="space-y-1">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-900">
+        <h2 className="text-xl font-semibold tracking-tight text-text-primary">
           Education
         </h2>
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-text-muted">
           Foundations in computing theory, distributed databases, and artificial intelligence.
         </p>
       </div>
@@ -17,31 +17,31 @@ export const EducationSection: React.FC = () => {
         {education.map((item, idx) => (
           <div
             key={idx}
-            className="bg-white border border-slate-200 shadow-sm rounded-2xl p-5 sm:p-6 hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4"
+            className="bg-surface border border-border-warm shadow-sm rounded-2xl p-5 sm:p-6 hover:shadow-md hover:border-stone-300 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4"
           >
             <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center shrink-0">
-                <GraduationCap className="w-5 h-5 text-slate-700" />
+              <div className="w-10 h-10 rounded-xl bg-canvas border border-border-warm text-text-primary flex items-center justify-center shrink-0">
+                <GraduationCap className="w-5 h-5 text-accent-text" />
               </div>
               <div>
-                <h3 className="text-slate-900 font-semibold text-base sm:text-lg">
+                <h3 className="text-text-primary font-semibold text-base sm:text-lg">
                   {item.degree}
                 </h3>
-                <p className="text-xs sm:text-sm font-medium text-slate-700">
+                <p className="text-xs sm:text-sm font-medium text-text-muted">
                   {item.field}
                 </p>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  {item.institution} <span className="text-slate-400">·</span> {item.location}
+                <p className="text-xs text-text-muted mt-0.5">
+                  {item.institution} <span className="text-stone-300">·</span> {item.location}
                 </p>
               </div>
             </div>
 
             {/* Standard pill badges: Date and CGPA aligned neatly alongside each other */}
             <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto shrink-0 pt-1 sm:pt-0">
-              <span className="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200 rounded-md">
+              <span className="px-2.5 py-1 text-xs font-medium bg-canvas text-text-muted border border-border-warm rounded-md">
                 2020 – 2024
               </span>
-              <span className="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200 rounded-md">
+              <span className="px-2.5 py-1 text-xs font-medium bg-canvas text-text-muted border border-border-warm rounded-md">
                 {item.score.type}: {item.score.value}
               </span>
             </div>

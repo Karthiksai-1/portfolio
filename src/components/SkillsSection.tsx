@@ -23,10 +23,10 @@ export const SkillsSection: React.FC = () => {
   return (
     <section id="skills" className="space-y-6 pt-6">
       <div className="space-y-1">
-        <h2 className="text-xl font-semibold tracking-tight text-slate-900">
+        <h2 className="text-xl font-semibold tracking-tight text-text-primary">
           Skills & Technical Expertise
         </h2>
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-text-muted">
           Core competencies spanning LLM architecture, database systems, and software infrastructure.
         </p>
       </div>
@@ -35,9 +35,9 @@ export const SkillsSection: React.FC = () => {
         {categories.map((cat) => (
           <div
             key={cat.title}
-            className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 space-y-3 hover:shadow-md hover:border-slate-300 transition-all duration-300"
+            className="bg-surface border border-border-warm shadow-sm rounded-2xl p-6 space-y-3 hover:shadow-md hover:border-stone-300 transition-all duration-300"
           >
-            <h3 className="text-sm font-semibold text-slate-800 uppercase tracking-wider font-mono">
+            <h3 className="text-sm font-semibold text-text-primary uppercase tracking-wider font-mono">
               {cat.title}
             </h3>
 
@@ -45,7 +45,7 @@ export const SkillsSection: React.FC = () => {
               {cat.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="bg-slate-100 text-slate-700 border border-slate-200 text-xs px-2.5 py-1 rounded-md font-medium"
+                  className="bg-canvas text-text-muted border border-border-warm text-xs px-2.5 py-1 rounded-md font-medium"
                 >
                   {skill}
                 </span>
