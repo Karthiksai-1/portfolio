@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Github, ArrowUpRight } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { projects } from '../data/portfolioData';
 
 export const ProjectsSection: React.FC = () => {
@@ -114,7 +114,6 @@ export const ProjectsSection: React.FC = () => {
                         rel="noopener noreferrer"
                         className="group/btn inline-flex items-center gap-1 text-xs font-medium text-text-muted hover:text-text-primary transition-colors"
                       >
-                        <ArrowUpRight className="w-3.5 h-3.5" />
                         <span>Live Demo</span>
                         <span className="inline-block transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5">↗</span>
                       </a>

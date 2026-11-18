@@ -86,7 +86,7 @@ export const RagCaseStudy: React.FC = () => {
               className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-surface text-text-primary border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
             >
               <ArrowUpRight className="w-3.5 h-3.5" />
-              <span>Live Application ↗</span>
+              <span>Live Application</span>
             </a>
           </div>
         </header>
@@ -420,7 +420,7 @@ export const RagCaseStudy: React.FC = () => {
             className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-surface text-text-primary border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>← Back to Projects</span>
+            <span>Back to Projects</span>
           </Link>
 
           <div className="flex items-center gap-3">
@@ -431,7 +431,7 @@ export const RagCaseStudy: React.FC = () => {
               className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-surface text-text-primary border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
             >
               <ArrowUpRight className="w-3.5 h-3.5" />
-              <span>Live Demo ↗</span>
+              <span>Live Demo</span>
             </a>
 
             <a
