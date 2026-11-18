@@ -30,7 +30,7 @@ export const ExperienceTimeline: React.FC = () => {
                 </div>
               </div>
 
-              <div className="inline-flex items-center text-xs font-mono text-text-muted px-2.5 py-1 rounded-lg bg-canvas border border-border-warm self-start sm:self-auto shrink-0">
+              <div className="inline-flex items-center text-xs font-medium text-text-muted px-2.5 py-1 rounded-lg bg-canvas border border-border-warm self-start sm:self-auto shrink-0">
                 {item.startDate} – {item.endDate}
               </div>
             </div>

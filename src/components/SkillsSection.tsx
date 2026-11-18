@@ -37,7 +37,7 @@ export const SkillsSection: React.FC = () => {
             key={cat.title}
             className="bg-surface border border-border-warm shadow-sm rounded-2xl p-6 space-y-3 hover:shadow-md hover:border-stone-300 transition-all duration-300"
           >
-            <h3 className="text-sm font-semibold text-text-primary uppercase tracking-wider font-mono">
+            <h3 className="text-sm font-semibold text-text-primary uppercase tracking-wider">
               {cat.title}
             </h3>
 

@@ -30,7 +30,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
         {/* Header */}
         <header className="space-y-4 text-left">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-xs uppercase tracking-wider text-text-muted">
+            <span className="text-xs uppercase tracking-wider text-text-muted">
               Machine Learning // 03
             </span>
             <span className="text-stone-300">·</span>
@@ -50,19 +50,19 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
           {/* 4-Column Balanced Metadata Box */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-4 sm:p-5 rounded-xl border border-border-warm bg-surface shadow-sm mt-6 text-left">
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-text-muted text-left">Scope</div>
+              <div className="text-xs uppercase tracking-wider text-text-muted text-left">Scope</div>
               <div className="text-text-primary font-semibold mt-1 text-left text-xs leading-normal">Solo Architecture &amp; Implementation</div>
             </div>
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-text-muted text-left">Stack</div>
+              <div className="text-xs uppercase tracking-wider text-text-muted text-left">Stack</div>
               <div className="text-text-primary font-semibold mt-1 text-left text-xs leading-normal">Python · Scikit-Learn · XGBoost · FastAPI</div>
             </div>
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-text-muted text-left">Latency</div>
+              <div className="text-xs uppercase tracking-wider text-text-muted text-left">Latency</div>
               <div className="text-text-primary font-semibold mt-1 text-left text-xs leading-normal">&lt; 45ms P95 per request</div>
             </div>
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-text-muted text-left">Deployment</div>
+              <div className="text-xs uppercase tracking-wider text-text-muted text-left">Deployment</div>
               <div className="text-text-primary font-semibold mt-1 text-left text-xs leading-normal">Dockerized Microservice</div>
             </div>
           </div>
@@ -83,7 +83,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
 
         {/* Results Section */}
         <section className="space-y-4 text-left">
-          <div className="font-mono text-xs uppercase tracking-wider text-text-muted">
+          <div className="text-xs uppercase tracking-wider text-text-muted">
             Model Benchmarks
           </div>
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-3 text-left">Results &amp; Impact</h2>
@@ -118,7 +118,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
 
         {/* The Problem Section */}
         <section className="space-y-4 text-left">
-          <div className="font-mono text-xs uppercase tracking-wider text-text-muted">
+          <div className="text-xs uppercase tracking-wider text-text-muted">
             Problem Space
           </div>
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-3 text-left">
@@ -157,7 +157,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
 
         {/* How It Works Section */}
         <section className="space-y-4 text-left">
-          <div className="font-mono text-xs uppercase tracking-wider text-text-muted">
+          <div className="text-xs uppercase tracking-wider text-text-muted">
             System Topology
           </div>
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-3 text-left">
@@ -207,7 +207,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
                 <div className="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full border-2 border-white bg-slate-900 shadow-sm" />
 
                 <div className="flex items-baseline gap-2 mb-1">
-                  <span className="font-mono text-xs font-semibold text-slate-400">
+                  <span className="text-xs font-semibold text-slate-400">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                   <h4 className="text-sm font-semibold text-slate-900 tracking-tight">
@@ -222,7 +222,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
                 {step.tags && (
                   <div className="flex flex-wrap gap-1.5 mt-2">
                     {step.tags.map((tag) => (
-                      <span key={tag} className="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700">
+                      <span key={tag} className="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700">
                         {tag}
                       </span>
                     ))}
@@ -235,7 +235,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
           {/* Native Responsive Pipeline Component */}
           <div className="my-8 w-full max-w-2xl mx-auto flex flex-col items-center">
             {/* Stage 1: Pipeline Header */}
-            <div className="w-full text-center py-2.5 px-4 rounded-lg border border-border-warm bg-canvas font-mono text-xs font-semibold tracking-wider text-text-primary uppercase shadow-xs">
+            <div className="w-full text-center py-2.5 px-4 rounded-lg border border-border-warm bg-canvas text-xs font-semibold tracking-wider text-text-primary uppercase shadow-xs">
               End-to-End ML Pipeline &amp; Inference Topology
             </div>
 
@@ -251,11 +251,11 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
             <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-blue-500"></span>
-                <h4 className="text-xs sm:text-sm font-semibold text-text-primary font-mono text-left">
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
                   Inbound Customer Telemetry Stream
                 </h4>
               </div>
-              <p className="mt-1 text-xs text-text-muted pl-4 font-mono text-left">
+              <p className="mt-1 text-xs text-text-muted pl-4 text-left">
                 7,000+ Raw Accounts · Contract duration, support tickets &amp; billing logs
               </p>
             </div>
@@ -276,7 +276,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
                   Scikit-Learn Preprocessing Pipeline
                 </h4>
               </div>
-              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+              <ul className="space-y-1 pl-4 text-xs text-text-muted border-l-2 border-border-warm ml-1 text-left">
                 <li className="pl-2">├─ Median statistical imputation for missing numerical fields</li>
                 <li className="pl-2">├─ One-Hot categorical encoding &amp; StandardScaler normalization</li>
                 <li className="pl-2">└─ Serialized transformer pipeline preventing cross-fold leakage</li>
@@ -299,7 +299,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
                   Stratified 5-Fold Model Tournament
                 </h4>
               </div>
-              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+              <ul className="space-y-1 pl-4 text-xs text-text-muted border-l-2 border-border-warm ml-1 text-left">
                 <li className="pl-2">├─ <strong className="text-text-primary">Logistic Regression:</strong> 0.78 ROC-AUC baseline</li>
                 <li className="pl-2">├─ <strong className="text-text-primary">Random Forest:</strong> 0.83 ROC-AUC benchmark</li>
                 <li className="pl-2">└─ <strong className="text-text-primary">Champion XGBoost Classifier:</strong> 0.87 ROC-AUC champion</li>
@@ -322,7 +322,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
                   Optimal Threshold Calibration &amp; SHAP Attribution
                 </h4>
               </div>
-              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+              <ul className="space-y-1 pl-4 text-xs text-text-muted border-l-2 border-border-warm ml-1 text-left">
                 <li className="pl-2">├─ Decision threshold tuned to 0.38 for maximum recall balance</li>
                 <li className="pl-2">├─ SHAP TreeExplainer exact attribution in polynomial O(TLD²)</li>
                 <li className="pl-2">└─ Top positive and negative risk factors extracted per account</li>
@@ -345,7 +345,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
                   Asynchronous Inference Microservice
                 </h4>
               </div>
-              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+              <ul className="space-y-1 pl-4 text-xs text-text-muted border-l-2 border-border-warm ml-1 text-left">
                 <li className="pl-2">├─ Containerized FastAPI microservice with &lt;45ms P95 latency</li>
                 <li className="pl-2">└─ JSON payload returning churn probability &amp; key feature attributions</li>
               </ul>
@@ -355,7 +355,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
 
         {/* Key Decisions Section */}
         <section className="space-y-4 text-left">
-          <div className="font-mono text-xs uppercase tracking-wider text-text-muted">
+          <div className="text-xs uppercase tracking-wider text-text-muted">
             Trade-Offs &amp; Analysis
           </div>
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-4 text-left">
@@ -379,7 +379,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
                 TreeExplainer Over Kernel SHAP for Polynomial Time Calculation
               </h3>
               <p className="text-justify [text-align-last:left] hyphens-auto text-[14px] leading-relaxed text-text-muted font-normal">
-                Model-agnostic Kernel SHAP requires thousands of random evaluations per row, introducing multi-second latencies. Utilizing XGBoost-native <code className="text-xs bg-canvas px-1.5 py-0.5 rounded font-mono text-text-primary border border-border-warm">TreeExplainer</code> allows exact attribution computation directly from tree structure in &lt;20ms.
+                Model-agnostic Kernel SHAP requires thousands of random evaluations per row, introducing multi-second latencies. Utilizing XGBoost-native <code className="text-xs bg-canvas px-1.5 py-0.5 rounded text-text-primary border border-border-warm">TreeExplainer</code> allows exact attribution computation directly from tree structure in &lt;20ms.
               </p>
             </div>
 

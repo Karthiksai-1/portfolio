@@ -87,7 +87,7 @@ export const ProjectsSection: React.FC = () => {
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="font-mono text-[11px] px-2 py-0.5 rounded bg-canvas text-text-muted border border-border-warm"
+                      className="text-[11px] font-medium px-2 py-0.5 rounded bg-canvas text-text-muted border border-border-warm"
                     >
                       {tech}
                     </span>

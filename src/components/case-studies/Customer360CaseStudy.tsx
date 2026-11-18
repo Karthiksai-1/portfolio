@@ -30,7 +30,7 @@ export const Customer360CaseStudy: React.FC = () => {
         {/* Header */}
         <header className="space-y-4 text-left">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-xs uppercase tracking-wider text-text-muted">
+            <span className="text-xs uppercase tracking-wider text-text-muted">
               Dimensional Modeling // 05
             </span>
             <span className="text-border-warm">·</span>
@@ -50,19 +50,19 @@ export const Customer360CaseStudy: React.FC = () => {
           {/* 4-Column Balanced Metadata Box */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-4 sm:p-5 rounded-xl border border-border-warm bg-surface shadow-sm mt-6 text-left">
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-text-muted text-left">Scope</div>
+              <div className="text-xs uppercase tracking-wider text-text-muted text-left">Scope</div>
               <div className="text-text-primary font-semibold mt-1 text-left text-xs leading-normal">Solo Architecture &amp; Implementation</div>
             </div>
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-text-muted text-left">Stack</div>
+              <div className="text-xs uppercase tracking-wider text-text-muted text-left">Stack</div>
               <div className="text-text-primary font-semibold mt-1 text-left text-xs leading-normal">SQL (Window Functions) · Power BI · DAX</div>
             </div>
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-text-muted text-left">Transactions</div>
+              <div className="text-xs uppercase tracking-wider text-text-muted text-left">Transactions</div>
               <div className="text-text-primary font-semibold mt-1 text-left text-xs leading-normal">541,000+ Records</div>
             </div>
             <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-text-muted text-left">Dashboard</div>
+              <div className="text-xs uppercase tracking-wider text-text-muted text-left">Dashboard</div>
               <div className="text-text-primary font-semibold mt-1 text-left text-xs leading-normal">3-Page Executive Suite</div>
             </div>
           </div>
@@ -83,7 +83,7 @@ export const Customer360CaseStudy: React.FC = () => {
 
         {/* Results Section */}
         <section className="space-y-4 text-left">
-          <div className="font-mono text-xs uppercase tracking-wider text-text-muted">
+          <div className="text-xs uppercase tracking-wider text-text-muted">
             Analytics Impact
           </div>
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-3 text-left">Results &amp; Impact</h2>
@@ -118,7 +118,7 @@ export const Customer360CaseStudy: React.FC = () => {
 
         {/* The Problem Section */}
         <section className="space-y-4 text-left">
-          <div className="font-mono text-xs uppercase tracking-wider text-text-muted">
+          <div className="text-xs uppercase tracking-wider text-text-muted">
             Problem Space
           </div>
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-3 text-left">
@@ -157,7 +157,7 @@ export const Customer360CaseStudy: React.FC = () => {
 
         {/* How It Works Section */}
         <section className="space-y-4 text-left">
-          <div className="font-mono text-xs uppercase tracking-wider text-text-muted">
+          <div className="text-xs uppercase tracking-wider text-text-muted">
             System Topology
           </div>
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-3 text-left">
@@ -207,7 +207,7 @@ export const Customer360CaseStudy: React.FC = () => {
                 <div className="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full border-2 border-white bg-slate-900 shadow-sm" />
 
                 <div className="flex items-baseline gap-2 mb-1">
-                  <span className="font-mono text-xs font-semibold text-slate-400">
+                  <span className="text-xs font-semibold text-slate-400">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                   <h4 className="text-sm font-semibold text-slate-900 tracking-tight">
@@ -222,7 +222,7 @@ export const Customer360CaseStudy: React.FC = () => {
                 {step.tags && (
                   <div className="flex flex-wrap gap-1.5 mt-2">
                     {step.tags.map((tag) => (
-                      <span key={tag} className="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700">
+                      <span key={tag} className="text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700">
                         {tag}
                       </span>
                     ))}
@@ -235,7 +235,7 @@ export const Customer360CaseStudy: React.FC = () => {
           {/* Native Responsive Pipeline Component */}
           <div className="my-8 w-full max-w-2xl mx-auto flex flex-col items-center">
             {/* Stage 1: Pipeline Header */}
-            <div className="w-full text-center py-2.5 px-4 rounded-lg border border-border-warm bg-canvas font-mono text-xs font-semibold tracking-wider text-text-primary uppercase shadow-xs">
+            <div className="w-full text-center py-2.5 px-4 rounded-lg border border-border-warm bg-canvas text-xs font-semibold tracking-wider text-text-primary uppercase shadow-xs">
               Dimensional Star Schema &amp; Retention Pipeline
             </div>
 
@@ -251,11 +251,11 @@ export const Customer360CaseStudy: React.FC = () => {
             <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-blue-500"></span>
-                <h4 className="text-xs sm:text-sm font-semibold text-text-primary font-mono text-left">
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
                   Raw E-Commerce Transaction Stream
                 </h4>
               </div>
-              <p className="mt-1 text-xs text-text-muted pl-4 font-mono text-left">
+              <p className="mt-1 text-xs text-text-muted pl-4 text-left">
                 541K Records · Online Retail II Dataset
               </p>
             </div>
@@ -276,7 +276,7 @@ export const Customer360CaseStudy: React.FC = () => {
                   Data Sanitization &amp; Ingestion Guardrails
                 </h4>
               </div>
-              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+              <ul className="space-y-1 pl-4 text-xs text-text-muted border-l-2 border-border-warm ml-1 text-left">
                 <li className="pl-2">├─ Strip order cancellations (Invoice prefix &apos;C&apos;)</li>
                 <li className="pl-2">├─ Filter guest checkout nulls, sample SKUs &amp; negative prices</li>
                 <li className="pl-2">└─ Standardize customer geographies &amp; ISO datetime formats</li>
@@ -299,7 +299,7 @@ export const Customer360CaseStudy: React.FC = () => {
                   Star Schema Dimensional Modeling
                 </h4>
               </div>
-              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+              <ul className="space-y-1 pl-4 text-xs text-text-muted border-l-2 border-border-warm ml-1 text-left">
                 <li className="pl-2">├─ <strong className="text-text-primary">Dim_Customer:</strong> CustomerID, Geography, Cohort Month</li>
                 <li className="pl-2">├─ <strong className="text-text-primary">Dim_Product:</strong> StockCode, Description, Unit Price Tier</li>
                 <li className="pl-2">├─ <strong className="text-text-primary">Dim_Date:</strong> Calendar Hierarchy, Fiscal Quarters, MoM Index</li>
@@ -323,7 +323,7 @@ export const Customer360CaseStudy: React.FC = () => {
                   Analytical Processing: Dynamic RFM &amp; Cohort Matrices
                 </h4>
               </div>
-              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+              <ul className="space-y-1 pl-4 text-xs text-text-muted border-l-2 border-border-warm ml-1 text-left">
                 <li className="pl-2">├─ Recency, Frequency, Monetary scoring via SQL CTEs &amp; NTILE(5)</li>
                 <li className="pl-2">└─ Unbound rolling 12-month cohort retention heatmaps</li>
               </ul>
@@ -333,7 +333,7 @@ export const Customer360CaseStudy: React.FC = () => {
 
         {/* Key Decisions Section */}
         <section className="space-y-4 text-left">
-          <div className="font-mono text-xs uppercase tracking-wider text-text-muted">
+          <div className="text-xs uppercase tracking-wider text-text-muted">
             Trade-Offs &amp; Analysis
           </div>
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-4 text-left">
@@ -347,7 +347,7 @@ export const Customer360CaseStudy: React.FC = () => {
                 Star Schema Dimensional Model Over Flat Transactional Tables
               </h3>
               <p className="text-justify [text-align-last:left] hyphens-auto text-[14px] leading-relaxed text-text-muted font-normal">
-                Moving from a flat 541K row spreadsheet to a star schema with a central <code className="text-xs bg-canvas px-1.5 py-0.5 rounded font-mono text-text-primary border border-border-warm">Fact_Transactions</code> table and dedicated dimension tables eliminated repeated string overhead, reduced file size by 58%, and delivered instantaneous DAX calculation times.
+                Moving from a flat 541K row spreadsheet to a star schema with a central <code className="text-xs bg-canvas px-1.5 py-0.5 rounded text-text-primary border border-border-warm">Fact_Transactions</code> table and dedicated dimension tables eliminated repeated string overhead, reduced file size by 58%, and delivered instantaneous DAX calculation times.
               </p>
             </div>
 
