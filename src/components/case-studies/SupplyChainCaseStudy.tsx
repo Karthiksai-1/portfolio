@@ -232,46 +232,105 @@ export const SupplyChainCaseStudy: React.FC = () => {
             ))}
           </div>
 
-          {/* Architecture Schema */}
-          <pre className="w-full overflow-x-auto whitespace-pre text-left font-mono text-xs bg-slate-900 text-slate-100 p-4 rounded-xl leading-relaxed">
-{`┌────────────────────────────────────────────────────────────────────────┐
-│               AUTOMATED CI/CD DATA QUALITY & BI PIPELINE               │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Inbound Supply Chain Feed (180,000+ DataCo Logistics Orders)           │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ GitHub Actions Automated CI/CD Data Quality Gate                       │
-│ ├─ Rule 1: No negative shipping durations (Prevent time travel)        │
-│ ├─ Rule 2: Scheduled delivery days strictly positive (>0)              │
-│ ├─ Rule 3: Zero orphan foreign keys (Customer, Location, Product)      │
-│ └─ Rule 4: Revenue & order item total domain boundaries                │
-└──────────────────────────────────┬─────────────────────────────────────┘
-                                   │
-                        [100% Assertions Passed]
-                                   │
-                                   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Star Schema Dimensional Warehouse                                      │
-│ ├─ Dim_Geography (Market, Region, Country, City, ZIP)                  │
-│ ├─ Dim_Shipping_Mode (Standard, First Class, Same Day)                 │
-│ ├─ Dim_Customer (Segment, Lifetime Order Count)                        │
-│ ├─ Dim_Product (Category, Department, Price Tier)                      │
-│ └─ Fact_Orders (Shipping Delay Days, Order Profit, Late Flag)          │
-└──────────────────────────────────┬─────────────────────────────────────┘
-                                   │
-                                   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Power BI Executive Logistics Suite                                     │
-│ ├─ Late Delivery Risk Heatmap across Global Corridors                  │
-│ ├─ Carrier SLA Performance & Route Choke Point Isolation               │
-│ └─ Financial Impact Matrix: Delayed Revenue vs On-Time Deliveries      │
-└────────────────────────────────────────────────────────────────────────┘`}
-          </pre>
+          {/* Native Responsive Pipeline Component */}
+          <div className="my-8 w-full max-w-2xl mx-auto flex flex-col items-center">
+            {/* Stage 1: Pipeline Header */}
+            <div className="w-full text-center py-2.5 px-4 rounded-lg border border-border-warm bg-canvas font-mono text-xs font-semibold tracking-wider text-text-primary uppercase shadow-xs">
+              Automated CI/CD Data Quality &amp; Logistics Pipeline
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 2: Feed Ingestion */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary font-mono text-left">
+                  Inbound Logistics Feed Ingestion
+                </h4>
+              </div>
+              <p className="mt-1 text-xs text-text-muted pl-4 font-mono text-left">
+                180,000+ Global Orders · DataCo Supply Chain Dataset
+              </p>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 3: CI/CD Quality Gate */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-amber-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  GitHub Actions Automated CI/CD Data Quality Gate
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Rule 1: No negative shipping durations (Prevent time travel)</li>
+                <li className="pl-2">├─ Rule 2: Scheduled delivery days strictly positive (&gt;0)</li>
+                <li className="pl-2">├─ Rule 3: Zero orphan foreign keys (Customer, Location, Product)</li>
+                <li className="pl-2">└─ Rule 4: Revenue &amp; order item total domain boundaries</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 4: Star Schema */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Star Schema Dimensional Warehouse
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ <strong className="text-text-primary">Dim_Geography:</strong> Market, Region, Country, City, ZIP</li>
+                <li className="pl-2">├─ <strong className="text-text-primary">Dim_Shipping_Mode:</strong> Standard, First Class, Same Day</li>
+                <li className="pl-2">├─ <strong className="text-text-primary">Dim_Customer &amp; Dim_Product:</strong> Segment, Lifetime Count, Category</li>
+                <li className="pl-2">└─ <strong className="text-text-primary">Fact_Orders:</strong> Shipping Delay Days, Profit Margin, Late Flag</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 5: Power BI Logistics Suite */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-indigo-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Power BI Executive Logistics Suite
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Late Delivery Risk Heatmap across Global Corridors</li>
+                <li className="pl-2">├─ Carrier SLA Performance &amp; Route Choke Point Isolation</li>
+                <li className="pl-2">└─ Financial Impact Matrix: Delayed Revenue vs On-Time Deliveries</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* Key Decisions Section */}

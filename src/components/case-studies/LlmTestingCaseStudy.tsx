@@ -227,48 +227,102 @@ export const LlmTestingCaseStudy: React.FC = () => {
             ))}
           </div>
 
-          {/* Architecture Schema */}
-          <pre className="w-full overflow-x-auto whitespace-pre text-left font-mono text-xs bg-slate-900 text-slate-100 p-4 rounded-xl leading-relaxed">
-{`┌────────────────────────────────────────────────────────────────────────┐
-│                  PROMPT CI/CD TEST EVALUATION HARNESS                  │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ [Git Commit / Pull Request: System Prompt Mutation]                    │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ GitHub Actions Runner Triggered                                        │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ TIER 1: DETERMINISTIC ASSERTIONS (Fast & Zero Cost · <100ms)           │
-│ ├─ Strict JSON Schema Conformance (Pydantic models)                    │
-│ ├─ Regex Pattern Matching & Length / Token Budgets                     │
-│ ├─ Blacklisted Tokens, Toxic Substrings & PII Leak Guard               │
-│ └─ HTTP Parse Stability Benchmarks                                     │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                        [Tier 1 Suite Passes]
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ TIER 2: SEMANTIC LLM-AS-A-JUDGE (Differential Evaluation)              │
-│ ├─ Benchmark Test Battery (100+ standard reference prompts)            │
-│ ├─ Evaluator Model Scoring: Factual Grounding, Tone & Safety           │
-│ └─ Delta Comparison against Baseline Checkpoint Scores                 │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ MERGE DECISION & AUTOMATED REPORTERS                                   │
-│ ├─ Regression Delta < 0% ──► BLOCK PR MERGE                            │
-│ └─ Automated Diagnostic Markdown Report Posted to PR Thread            │
-└────────────────────────────────────────────────────────────────────────┘`}
-          </pre>
+          {/* Native Responsive Pipeline Component */}
+          <div className="my-8 w-full max-w-2xl mx-auto flex flex-col items-center">
+            {/* Stage 1: Pipeline Header */}
+            <div className="w-full text-center py-2.5 px-4 rounded-lg border border-border-warm bg-canvas font-mono text-xs font-semibold tracking-wider text-text-primary uppercase shadow-xs">
+              Prompt CI/CD Test Evaluation Harness
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 2: Pull Request Trigger */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary font-mono text-left">
+                  Pull Request &amp; System Prompt Mutation
+                </h4>
+              </div>
+              <p className="mt-1 text-xs text-text-muted pl-4 font-mono text-left">
+                GitHub Actions Webhook Trigger · Prompt diff detection
+              </p>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 3: Tier 1 Assertions */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-amber-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Tier 1: Deterministic Assertions (&lt;100ms · Zero Cost)
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Strict JSON schema validation via Pydantic models</li>
+                <li className="pl-2">├─ Regex pattern matching &amp; length / token budget enforcement</li>
+                <li className="pl-2">└─ Toxic substring filtering &amp; PII leak detection</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 4: Tier 2 LLM-as-a-Judge */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Tier 2: Semantic LLM-as-a-Judge Battery
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Benchmark battery across 100+ standard reference prompts</li>
+                <li className="pl-2">├─ Evaluator Model scoring: Factual grounding, tone, and safety</li>
+                <li className="pl-2">└─ Delta comparison against baseline production checkpoint scores</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 5: Merge Decision & Reports */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-indigo-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Merge Decision &amp; Inline Diagnostic Reporting
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Zero-regression gate: Quality drop &gt; 0% blocks PR merge</li>
+                <li className="pl-2">└─ Automated diagnostic Markdown diff table posted to PR thread</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* Key Decisions Section */}

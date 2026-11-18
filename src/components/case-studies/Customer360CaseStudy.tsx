@@ -232,50 +232,103 @@ export const Customer360CaseStudy: React.FC = () => {
             ))}
           </div>
 
-          {/* Architecture Schema */}
-          <pre className="w-full overflow-x-auto whitespace-pre text-left font-mono text-xs bg-slate-900 text-slate-100 p-4 rounded-xl leading-relaxed">
-{`┌────────────────────────────────────────────────────────────────────────┐
-│             DIMENSIONAL STAR SCHEMA & RETENTION PIPELINE               │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Raw E-Commerce Transaction Stream (541K Records, Online Retail II)     │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Data Sanitization & Ingestion Guardrails                               │
-│ ├─ Strip order cancellations (Invoice prefix 'C')                      │
-│ ├─ Filter guest checkout nulls, sample SKUs & negative unit prices     │
-│ └─ Standardize customer geographies & ISO datetime formats             │
-└──────────────────────────────────┬─────────────────────────────────────┘
-                                   │
-                                   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Star Schema Dimensional Modeling                                       │
-│ ├─ Dim_Customer (CustomerID, Geography, Acquisition Cohort Month)      │
-│ ├─ Dim_Product (StockCode, Description, Unit Price Tier)               │
-│ ├─ Dim_Date (Calendar Hierarchy, Fiscal Quarters, MoM Index)           │
-│ └─ Fact_Transactions (InvoiceNo, Quantity, Revenue, Margin)            │
-└──────────────────────────────────┬─────────────────────────────────────┘
-                                   │
-                                   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Analytical Processing: Dynamic RFM & Cohort Matrices                   │
-│ ├─ Recency, Frequency, Monetary scoring via SQL NTILE(5)               │
-│ ├─ 11 Behavioral Personas (Champions to Churned)                       │
-│ └─ Month-by-month triangular cohort decay curves (Months 0-12)         │
-└──────────────────────────────────┬─────────────────────────────────────┘
-                                   │
-                                   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ 3-Page Power BI Executive Suite                                        │
-│ ├─ Page 1: Executive KPI Overview (Revenue, AOV, Active Buyers)        │
-│ ├─ Page 2: RFM Matrix & Churn Risk Segmentation                        │
-│ └─ Page 3: 12-Month Cohort Retention Heatmap with Decay Curves         │
-└────────────────────────────────────────────────────────────────────────┘`}
-          </pre>
+          {/* Native Responsive Pipeline Component */}
+          <div className="my-8 w-full max-w-2xl mx-auto flex flex-col items-center">
+            {/* Stage 1: Pipeline Header */}
+            <div className="w-full text-center py-2.5 px-4 rounded-lg border border-border-warm bg-canvas font-mono text-xs font-semibold tracking-wider text-text-primary uppercase shadow-xs">
+              Dimensional Star Schema &amp; Retention Pipeline
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 2: Ingestion Source */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary font-mono text-left">
+                  Raw E-Commerce Transaction Stream
+                </h4>
+              </div>
+              <p className="mt-1 text-xs text-text-muted pl-4 font-mono text-left">
+                541K Records · Online Retail II Dataset
+              </p>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 3: Sanitization Guardrails */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-amber-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Data Sanitization &amp; Ingestion Guardrails
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Strip order cancellations (Invoice prefix &apos;C&apos;)</li>
+                <li className="pl-2">├─ Filter guest checkout nulls, sample SKUs &amp; negative prices</li>
+                <li className="pl-2">└─ Standardize customer geographies &amp; ISO datetime formats</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 4: Star Schema Modeling */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Star Schema Dimensional Modeling
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ <strong className="text-text-primary">Dim_Customer:</strong> CustomerID, Geography, Cohort Month</li>
+                <li className="pl-2">├─ <strong className="text-text-primary">Dim_Product:</strong> StockCode, Description, Unit Price Tier</li>
+                <li className="pl-2">├─ <strong className="text-text-primary">Dim_Date:</strong> Calendar Hierarchy, Fiscal Quarters, MoM Index</li>
+                <li className="pl-2">└─ <strong className="text-text-primary">Fact_Transactions:</strong> InvoiceNo, Quantity, Revenue, Margin</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 5: Analytical Processing */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-indigo-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Analytical Processing: Dynamic RFM &amp; Cohort Matrices
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Recency, Frequency, Monetary scoring via SQL CTEs &amp; NTILE(5)</li>
+                <li className="pl-2">└─ Unbound rolling 12-month cohort retention heatmaps</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* Key Decisions Section */}

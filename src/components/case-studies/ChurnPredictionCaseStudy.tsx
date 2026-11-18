@@ -232,49 +232,125 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
             ))}
           </div>
 
-          {/* Architecture Schema */}
-          <pre className="w-full overflow-x-auto whitespace-pre text-left font-mono text-xs bg-slate-900 text-slate-100 p-4 rounded-xl leading-relaxed">
-{`┌────────────────────────────────────────────────────────────────────────┐
-│                END-TO-END ML PIPELINE & SERVING ARCHITECTURE           │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Inbound Customer Telemetry (7,000+ Raw Accounts)                       │
-│ Billing history · Support tickets · Contract duration · Usage logs     │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Scikit-Learn Preprocessing Pipeline                                    │
-│ Median imputation · One-Hot categorical encoding · Standard scaling    │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Stratified 5-Fold Model Tournament                                     │
-│ Logistic Regression (0.78) · Random Forest (0.83) · XGBoost (0.87 AUC) │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Champion XGBoost Model Serialized + Calibrated Threshold               │
-│ Tuned classification threshold maximizing minority class recall (F1)   │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ SHAP TreeExplainer Local Attribution Engine                            │
-│ Exact Shapley values calculated in polynomial time O(TLD²)             │
-│ Top-5 positive & negative feature drivers extracted per account        │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Containerized FastAPI Microservice (<45ms P95 Latency)                 │
-│ { "churn_risk": 0.82, "status": "Churn", "top_drivers": [...] }        │
-└────────────────────────────────────────────────────────────────────────┘`}
-          </pre>
+          {/* Native Responsive Pipeline Component */}
+          <div className="my-8 w-full max-w-2xl mx-auto flex flex-col items-center">
+            {/* Stage 1: Pipeline Header */}
+            <div className="w-full text-center py-2.5 px-4 rounded-lg border border-border-warm bg-canvas font-mono text-xs font-semibold tracking-wider text-text-primary uppercase shadow-xs">
+              End-to-End ML Pipeline &amp; Inference Topology
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 2: Ingestion Source */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary font-mono text-left">
+                  Inbound Customer Telemetry Stream
+                </h4>
+              </div>
+              <p className="mt-1 text-xs text-text-muted pl-4 font-mono text-left">
+                7,000+ Raw Accounts · Contract duration, support tickets &amp; billing logs
+              </p>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 3: Preprocessing Pipeline */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-amber-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Scikit-Learn Preprocessing Pipeline
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Median statistical imputation for missing numerical fields</li>
+                <li className="pl-2">├─ One-Hot categorical encoding &amp; StandardScaler normalization</li>
+                <li className="pl-2">└─ Serialized transformer pipeline preventing cross-fold leakage</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 4: Model Tournament */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Stratified 5-Fold Model Tournament
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ <strong className="text-text-primary">Logistic Regression:</strong> 0.78 ROC-AUC baseline</li>
+                <li className="pl-2">├─ <strong className="text-text-primary">Random Forest:</strong> 0.83 ROC-AUC benchmark</li>
+                <li className="pl-2">└─ <strong className="text-text-primary">Champion XGBoost Classifier:</strong> 0.87 ROC-AUC champion</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 5: Threshold Tuning & SHAP */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-indigo-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Optimal Threshold Calibration &amp; SHAP Attribution
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Decision threshold tuned to 0.38 for maximum recall balance</li>
+                <li className="pl-2">├─ SHAP TreeExplainer exact attribution in polynomial O(TLD²)</li>
+                <li className="pl-2">└─ Top positive and negative risk factors extracted per account</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 6: Inference Microservice */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-purple-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Asynchronous Inference Microservice
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Containerized FastAPI microservice with &lt;45ms P95 latency</li>
+                <li className="pl-2">└─ JSON payload returning churn probability &amp; key feature attributions</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* Key Decisions Section */}

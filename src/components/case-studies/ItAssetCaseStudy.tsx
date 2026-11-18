@@ -232,47 +232,103 @@ export const ItAssetCaseStudy: React.FC = () => {
             ))}
           </div>
 
-          {/* Architecture Schema */}
-          <pre className="w-full overflow-x-auto whitespace-pre text-left font-mono text-xs bg-slate-900 text-slate-100 p-4 rounded-xl leading-relaxed">
-{`┌────────────────────────────────────────────────────────────────────────┐
-│                IT ASSET RECONCILIATION DATA ARCHITECTURE               │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-        ┌───────────────────────────┴───────────────────────────┐
-        ▼                                                       ▼
-┌──────────────────────────────┐        ┌──────────────────────────────┐
-│ CMDB Inventory Register      │        │ Active Network Discovery     │
-│ 1,600 Registered Assets      │        │ 1,400 Discovery Logs         │
-└──────────────┬───────────────┘        └──────────────┬───────────────┘
-               │                                       │
-               └───────────────────┬───────────────────┘
-                                   │
-                                   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ SQLite Staging & Multi-Tier Fallback Join Engine                       │
-│ ├─ Tier 1: Serial Number Exact Match (Sanitized, whitespace-trimmed)   │
-│ ├─ Tier 2: MAC Address Fallback (Normalized colon/hyphen agnostic)     │
-│ └─ Tier 3: Hostname Fuzzy Heuristic Match                              │
-└──────────────────────────────────┬─────────────────────────────────────┘
-                                   │
-                                   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Audit Exception Classification Engine                                  │
-│ ├─ Reconciled: Active registered hardware                              │
-│ ├─ Ghost Assets (175): Registered in CMDB, 0 network activity (>90d)   │
-│ ├─ Shadow Devices (40): Active on internal VLAN, missing from CMDB     │
-│ └─ Financial Tagging: $350K refresh backlog & $42K/yr idle software    │
-└──────────────────────────────────┬─────────────────────────────────────┘
-                                   │
-                                   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Star Schema Data Warehouse & 4-Page Power BI Scorecard                 │
-│ ├─ Page 1: SLA Gap Analysis (89.1% actual vs 95% target)               │
-│ ├─ Page 2: Shadow Device Security Quarantine Roster                    │
-│ ├─ Page 3: Ghost Asset License Reclamation Engine                      │
-│ └─ Page 4: $350K Hardware Refresh Horizon                              │
-└────────────────────────────────────────────────────────────────────────┘`}
-          </pre>
+          {/* Native Responsive Pipeline Component */}
+          <div className="my-8 w-full max-w-2xl mx-auto flex flex-col items-center">
+            {/* Stage 1: Pipeline Header */}
+            <div className="w-full text-center py-2.5 px-4 rounded-lg border border-border-warm bg-canvas font-mono text-xs font-semibold tracking-wider text-text-primary uppercase shadow-xs">
+              IT Asset Reconciliation &amp; Star Schema Architecture
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 2: Dual Source */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary font-mono text-left">
+                  Dual-Source Ledger Ingestion
+                </h4>
+              </div>
+              <p className="mt-1 text-xs text-text-muted pl-4 font-mono text-left">
+                1,600 CMDB Registered Assets + 1,400 Network Discovery Active Logs
+              </p>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 3: Staging & Fallback */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-amber-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  SQLite Staging &amp; Multi-Tier Fallback Join Engine
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ MAC address normalization (delimiter &amp; casing agnostic)</li>
+                <li className="pl-2">├─ Serial number whitespace trimming &amp; regex sanitization</li>
+                <li className="pl-2">└─ Tiered CTE fallback joins (Serial &rarr; MAC &rarr; Hostname)</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 4: Classification */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Audit Exception Classification Engine
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Reconciled: Active registered hardware in compliance</li>
+                <li className="pl-2">├─ Ghost Assets (175): Registered in CMDB, 0 network activity (&gt;90d)</li>
+                <li className="pl-2">└─ Shadow Devices (40): Active on internal VLAN, missing from CMDB</li>
+              </ul>
+            </div>
+
+            {/* Down Connector */}
+            <div className="flex flex-col items-center my-1 text-slate-300">
+              <div className="h-4 w-px bg-slate-300"></div>
+              <svg className="w-3.5 h-3.5 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            {/* Stage 5: BI Scorecard */}
+            <div className="w-full p-4 rounded-xl border border-border-warm bg-surface shadow-xs text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="h-2 w-2 rounded-full bg-indigo-500"></span>
+                <h4 className="text-xs sm:text-sm font-semibold text-text-primary text-left">
+                  Star Schema Data Warehouse &amp; Power BI Scorecard
+                </h4>
+              </div>
+              <ul className="space-y-1 pl-4 text-xs text-text-muted font-mono border-l-2 border-border-warm ml-1 text-left">
+                <li className="pl-2">├─ Financial Tagging: $350K refresh backlog &amp; $42K/yr idle software</li>
+                <li className="pl-2">├─ Page 1-2: SLA Gap Analysis &amp; Shadow Device Quarantine Roster</li>
+                <li className="pl-2">└─ Page 3-4: Ghost License Reclamation &amp; Refresh Horizon</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* Key Decisions Section */}
