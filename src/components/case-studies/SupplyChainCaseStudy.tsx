@@ -164,14 +164,76 @@ export const SupplyChainCaseStudy: React.FC = () => {
             How It Works: Automated CI/CD Gates &amp; Star Schema Warehousing
           </h2>
 
-          <div className="border-l border-border-warm ml-3 pl-6 space-y-6">
-            <p className="text-left text-[14px] leading-relaxed text-text-muted font-normal">
-              Every data update triggers a GitHub Actions test runner executing 12 deterministic data quality assertions. Only validated data updates populate the dimensional warehouse and Power BI model.
-            </p>
+          <p className="text-left text-[14px] leading-relaxed text-text-muted font-normal">
+            Every data update triggers a GitHub Actions test runner executing 12 deterministic data quality assertions. Only validated data updates populate the dimensional warehouse and Power BI model:
+          </p>
 
-            {/* Clean Subtle Technical Blueprint */}
-            <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-xs leading-relaxed whitespace-pre shadow-sm">
-              <pre className="w-full overflow-x-auto whitespace-pre font-mono text-xs leading-relaxed text-text-primary text-left">
+          {/* Clean, Left-Aligned Vertical Pipeline */}
+          <div className="relative border-l border-slate-200 ml-3 pl-6 space-y-6 my-6 text-left">
+            {[
+              {
+                title: 'Logistics Feed Ingestion',
+                description: 'Streams 180,000+ global supply chain order records with international shipping routes, carrier tiers, and transit telemetry.',
+                tags: ['DataCo Feed', '180,000+ Orders', 'Global Logistics']
+              },
+              {
+                title: 'Automated Shift-Left CI/CD Quality Gate',
+                description: 'Executes 12 deterministic data quality assertions in GitHub Actions prior to database ingestion, eliminating bad data at the source.',
+                tags: ['GitHub Actions', '12 Assertions', 'CI/CD Gate']
+              },
+              {
+                title: 'Referential & Temporal Integrity Assertions',
+                description: 'Validates zero orphan foreign keys and verifies delivery dates strictly follow shipment timestamps, catching time-travel data corruption.',
+                tags: ['Zero Orphan Keys', 'Temporal Consistency', 'Domain Boundaries']
+              },
+              {
+                title: 'Dimensional Warehouse Modeling',
+                description: 'Decomposes 53-column flat files into a 4-dimension star schema (Geography, Shipping Mode, Customer, Product) with an optimized Fact_Orders table.',
+                tags: ['Star Schema', '4 Dimensions', '62% Storage Cut']
+              },
+              {
+                title: 'Route & Carrier Risk Segmentation',
+                description: 'Analyzes late shipment frequencies by fulfillment tier, uncovering a 54.8% late delivery rate in premium First Class vs 31.2% in Standard Class.',
+                tags: ['Carrier SLA', 'First Class vs Standard', 'Delay Attribution']
+              },
+              {
+                title: 'Power BI Executive Risk Monitor',
+                description: 'Publishes certified logistics data to an executive Power BI suite featuring late delivery risk heatmaps and delay financial impact models.',
+                tags: ['Power BI', 'DAX Metrics', 'Executive Risk Suite']
+              }
+            ].map((step, idx) => (
+              <div key={idx} className="relative">
+                {/* Pipeline Node */}
+                <div className="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full border-2 border-white bg-slate-900 shadow-sm" />
+
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span className="font-mono text-xs font-semibold text-slate-400">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <h4 className="text-sm font-semibold text-slate-900 tracking-tight">
+                    {step.title}
+                  </h4>
+                </div>
+
+                <p className="text-left text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {step.description}
+                </p>
+
+                {step.tags && (
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {step.tags.map((tag) => (
+                      <span key={tag} className="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Architecture Schema */}
+          <pre className="w-full overflow-x-auto whitespace-pre text-left font-mono text-xs bg-slate-900 text-slate-100 p-4 rounded-xl leading-relaxed">
 {`┌────────────────────────────────────────────────────────────────────────┐
 │               AUTOMATED CI/CD DATA QUALITY & BI PIPELINE               │
 └────────────────────────────────────────────────────────────────────────┘
@@ -209,9 +271,7 @@ export const SupplyChainCaseStudy: React.FC = () => {
 │ ├─ Carrier SLA Performance & Route Choke Point Isolation               │
 │ └─ Financial Impact Matrix: Delayed Revenue vs On-Time Deliveries      │
 └────────────────────────────────────────────────────────────────────────┘`}
-              </pre>
-            </div>
-          </div>
+          </pre>
         </section>
 
         {/* Key Decisions Section */}

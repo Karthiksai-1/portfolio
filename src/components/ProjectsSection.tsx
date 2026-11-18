@@ -49,7 +49,7 @@ export const ProjectsSection: React.FC = () => {
       </div>
 
       {/* Balanced 2-Column Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
         {filteredProjects.map((project) => {
           const codeUrl = (project.githubUrl && project.githubUrl.startsWith('http'))
             ? project.githubUrl
@@ -60,11 +60,11 @@ export const ProjectsSection: React.FC = () => {
           return (
             <div
               key={project.id}
-              className="group relative flex flex-col justify-between h-full rounded-xl border border-border-warm bg-surface p-5 sm:p-6 transition-all duration-200 ease-out hover:border-slate-400/70 hover:shadow-sm hover:-translate-y-1 text-left"
+              className="group relative flex flex-col justify-between h-full rounded-xl border border-border-warm bg-surface p-5 sm:p-6 transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-sm text-left"
             >
               <div className="flex flex-col flex-grow text-left">
                 {/* Top: Title and Domain Badge */}
-                <div className="flex items-start justify-between gap-3 text-left">
+                <div className="flex items-start justify-between gap-3 text-left mb-2">
                   <h3 className="text-base sm:text-lg font-semibold text-text-primary tracking-tight group-hover:text-text-muted transition-colors leading-snug text-left">
                     {project.title}
                   </h3>

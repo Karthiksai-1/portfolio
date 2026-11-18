@@ -178,14 +178,76 @@ export const RagCaseStudy: React.FC = () => {
             How It Works: Grounded Ingestion &amp; Retrieval Pipeline
           </h2>
 
-          <div className="border-l border-border-warm ml-3 pl-6 space-y-6">
-            <p className="text-left text-[14px] leading-relaxed text-text-muted font-normal">
-              Every document follows an audit-grade data pipeline from ingestion to response synthesis, ensuring strict boundary preservation and verified excerpt attribution.
-            </p>
+          <p className="text-left text-[14px] leading-relaxed text-text-muted font-normal">
+            Every document follows an audit-grade data pipeline from ingestion to response synthesis, ensuring strict boundary preservation and verified excerpt attribution:
+          </p>
 
-            {/* Clean Subtle Technical Blueprint */}
-            <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-xs leading-relaxed whitespace-pre shadow-sm">
-              <pre className="w-full overflow-x-auto whitespace-pre font-mono text-xs leading-relaxed text-text-primary text-left">
+          {/* Clean, Left-Aligned Vertical Pipeline */}
+          <div className="relative border-l border-slate-200 ml-3 pl-6 space-y-6 my-6 text-left">
+            {[
+              {
+                title: 'Document Ingestion & Page-Level Partitioning',
+                description: 'Extracts raw text via PyPDF, performs header and footer sanitization, and injects immutable document IDs and page numbers into each partition.',
+                tags: ['PyPDF', 'Header/Footer Stripping', 'Page Tagging']
+              },
+              {
+                title: 'Recursive Semantic Chunking',
+                description: 'Splits sanitized documents using an 800-token window with 150-token sliding overlap to maintain conceptual continuity across headings and paragraphs.',
+                tags: ['RecursiveSplitter', '800 Tokens', '150 Overlap']
+              },
+              {
+                title: 'Vector Embeddings & Index Storage',
+                description: 'Vectorizes each chunk with text-embedding-3-small (1536 dimensions) and indexes representations in a FAISS IndexFlatIP cosine similarity index.',
+                tags: ['text-embedding-3-small', 'FAISS IndexFlatIP', 'Cosine Metric']
+              },
+              {
+                title: 'Similarity Matching & Strict Score Gating',
+                description: 'Retrieves top-4 candidate chunks and applies a hard cosine threshold cutoff (score ≥ 0.78). Queries below the threshold trigger an immediate refusal fallback.',
+                tags: ['Top-k = 4', 'Score Gating ≥ 0.78', 'Deterministic Refusal']
+              },
+              {
+                title: 'Grounded Generation & Citation Verification',
+                description: 'Passes verified chunks to GPT-4o-mini with instructions to cite [Source: Page X] verbatim and refuse to answer if supporting evidence is missing.',
+                tags: ['GPT-4o-mini', 'Citation Verifier', 'Zero Hallucination']
+              },
+              {
+                title: 'Verified Structured Response Output',
+                description: 'Delivers typed responses with validated citation objects containing the target page number and exact snippet matching the original source PDF.',
+                tags: ['FastAPI', 'Streamlit', 'JSON Payload']
+              }
+            ].map((step, idx) => (
+              <div key={idx} className="relative">
+                {/* Pipeline Node */}
+                <div className="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full border-2 border-white bg-slate-900 shadow-sm" />
+
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span className="font-mono text-xs font-semibold text-slate-400">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <h4 className="text-sm font-semibold text-slate-900 tracking-tight">
+                    {step.title}
+                  </h4>
+                </div>
+
+                <p className="text-left text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {step.description}
+                </p>
+
+                {step.tags && (
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {step.tags.map((tag) => (
+                      <span key={tag} className="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Architecture Schema */}
+          <pre className="w-full overflow-x-auto whitespace-pre text-left font-mono text-xs bg-slate-900 text-slate-100 p-4 rounded-xl leading-relaxed">
 {`┌────────────────────────────────────────────────────────────────────────┐
 │                        RAG PIPELINE ARCHITECTURE                       │
 └────────────────────────────────────────────────────────────────────────┘
@@ -229,9 +291,7 @@ export const RagCaseStudy: React.FC = () => {
 │ 6. Verified Structured Response (FastAPI / Streamlit)                  │
 │    { "answer": "...", "citations": [{ "page": 4, "excerpt": "..." }] } │
 └────────────────────────────────────────────────────────────────────────┘`}
-              </pre>
-            </div>
-          </div>
+          </pre>
         </section>
 
         {/* Key Decisions Section */}

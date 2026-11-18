@@ -164,14 +164,76 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
             How It Works: Tournament Training &amp; Polynomial TreeExplainer
           </h2>
 
-          <div className="border-l border-border-warm ml-3 pl-6 space-y-6">
-            <p className="text-left text-[14px] leading-relaxed text-text-muted font-normal">
-              Customer telemetry is ingested, sanitized through scikit-learn transformers, modeled via XGBoost with calibrated probability thresholds, and served with polynomial SHAP feature rankings in an async FastAPI service.
-            </p>
+          <p className="text-left text-[14px] leading-relaxed text-text-muted font-normal">
+            Customer telemetry is ingested, sanitized through scikit-learn transformers, modeled via XGBoost with calibrated probability thresholds, and served with polynomial SHAP feature rankings in an async FastAPI service:
+          </p>
 
-            {/* Clean Subtle Technical Blueprint */}
-            <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-xs leading-relaxed whitespace-pre shadow-sm">
-              <pre className="w-full overflow-x-auto whitespace-pre font-mono text-xs leading-relaxed text-text-primary text-left">
+          {/* Clean, Left-Aligned Vertical Pipeline */}
+          <div className="relative border-l border-slate-200 ml-3 pl-6 space-y-6 my-6 text-left">
+            {[
+              {
+                title: 'Inbound Telemetry Ingestion',
+                description: 'Ingests 7,000+ raw customer accounts covering multi-year billing history, support tickets, contract duration, and daily usage logs.',
+                tags: ['Raw Ingestion', 'Billing Logs', '7,000+ Accounts']
+              },
+              {
+                title: 'Scikit-Learn Transformer Pipeline',
+                description: 'Imputes missing values with median statistics, encodes categorical features via One-Hot encoding, and standardizes continuous variables.',
+                tags: ['scikit-learn', 'Median Imputer', 'StandardScaler']
+              },
+              {
+                title: 'Stratified 5-Fold Model Tournament',
+                description: 'Trains and evaluates candidate classifiers (Logistic Regression 0.78, Random Forest 0.83, XGBoost 0.87 AUC) under rigorous cross-validation.',
+                tags: ['StratifiedKFold', 'XGBoost', '0.87 ROC-AUC']
+              },
+              {
+                title: 'Optimal Threshold Calibration',
+                description: 'Calibrates decision boundary from default 0.50 down to 0.38 to balance precision against business-critical churn recall, maximizing revenue retention.',
+                tags: ['Threshold 0.38', 'F1 Optimization', 'Recall Maximization']
+              },
+              {
+                title: 'SHAP TreeExplainer Local Attribution',
+                description: 'Calculates exact Shapley feature importance in polynomial time O(TLD²), extracting top positive and negative risk factors for individual accounts.',
+                tags: ['SHAP TreeExplainer', 'Polynomial O(TLD²)', 'Local Attribution']
+              },
+              {
+                title: 'Asynchronous Microservice Inference',
+                description: 'Serves real-time inference with P95 latency under 45ms via containerized FastAPI, returning predicted risk score and top account drivers.',
+                tags: ['FastAPI', 'Docker', '<45ms P95']
+              }
+            ].map((step, idx) => (
+              <div key={idx} className="relative">
+                {/* Pipeline Node */}
+                <div className="absolute -left-[31px] top-1 h-3.5 w-3.5 rounded-full border-2 border-white bg-slate-900 shadow-sm" />
+
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span className="font-mono text-xs font-semibold text-slate-400">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <h4 className="text-sm font-semibold text-slate-900 tracking-tight">
+                    {step.title}
+                  </h4>
+                </div>
+
+                <p className="text-left text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {step.description}
+                </p>
+
+                {step.tags && (
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {step.tags.map((tag) => (
+                      <span key={tag} className="font-mono text-[11px] px-2 py-0.5 rounded bg-slate-100 text-slate-700">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Architecture Schema */}
+          <pre className="w-full overflow-x-auto whitespace-pre text-left font-mono text-xs bg-slate-900 text-slate-100 p-4 rounded-xl leading-relaxed">
 {`┌────────────────────────────────────────────────────────────────────────┐
 │                END-TO-END ML PIPELINE & SERVING ARCHITECTURE           │
 └────────────────────────────────────────────────────────────────────────┘
@@ -212,9 +274,7 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
 │ Containerized FastAPI Microservice (<45ms P95 Latency)                 │
 │ { "churn_risk": 0.82, "status": "Churn", "top_drivers": [...] }        │
 └────────────────────────────────────────────────────────────────────────┘`}
-              </pre>
-            </div>
-          </div>
+          </pre>
         </section>
 
         {/* Key Decisions Section */}
