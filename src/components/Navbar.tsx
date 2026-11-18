@@ -1,11 +1,13 @@
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { Github, Linkedin, FileText } from 'lucide-react';
 import { profile } from '../data/portfolioData';
+import { useActiveSection } from '../hooks/useActiveSection';
 
 export const Navbar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isCaseStudy = location.pathname.startsWith('/projects/');
+  const activeSection = useActiveSection(['about', 'experience', 'projects', 'skills', 'contact']);
 
   const navLinks = [
     { name: 'About', href: '#about' },
@@ -44,17 +46,27 @@ export const Navbar: React.FC = () => {
 
         {/* Right Navigation & Actions */}
         <div className="flex items-center gap-3 sm:gap-6">
-          <nav className="hidden md:flex items-center gap-6 text-sm text-text-muted">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={isCaseStudy ? `/${link.href}` : link.href}
-                onClick={(e) => handleAnchorClick(e, link.href)}
-                className="hover:text-text-primary transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            {navLinks.map((link) => {
+              const isActive = !isCaseStudy && activeSection === link.name.toLowerCase();
+              return (
+                <a
+                  key={link.name}
+                  href={isCaseStudy ? `/${link.href}` : link.href}
+                  onClick={(e) => handleAnchorClick(e, link.href)}
+                  className={`relative py-1 transition-colors duration-150 ${
+                    isActive
+                      ? 'text-text-primary font-semibold'
+                      : 'text-text-muted hover:text-text-primary'
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent-text rounded-full animate-fade-in" />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           <div className="hidden md:block h-3.5 w-px bg-border-warm" />

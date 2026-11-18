@@ -8,6 +8,7 @@ import SkillsSection from './components/SkillsSection';
 import EducationSection from './components/EducationSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import FloatingSectionDock from './components/FloatingSectionDock';
 import RagCaseStudy from './components/RagCaseStudy';
 import LlmTestingCaseStudy from './components/case-studies/LlmTestingCaseStudy';
 import ChurnPredictionCaseStudy from './components/case-studies/ChurnPredictionCaseStudy';
@@ -50,6 +51,9 @@ function HomePage() {
         <ContactSection />
         <Footer />
       </main>
+
+      {/* Interactive Floating Section Indicator Dock */}
+      <FloatingSectionDock />
     </div>
   );
 }
