@@ -163,13 +163,15 @@ export const SupplyChainCaseStudy: React.FC = () => {
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-3 text-left">
             How It Works: Automated CI/CD Gates &amp; Star Schema Warehousing
           </h2>
-          <p className="text-justify [text-align-last:left] hyphens-auto text-[14px] leading-relaxed text-text-muted font-normal mb-4">
-            Every data update triggers a GitHub Actions test runner executing 12 deterministic data quality assertions. Only validated data updates populate the dimensional warehouse and Power BI model.
-          </p>
 
-          {/* Clean Subtle Technical Blueprint */}
-          <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-[10px] sm:text-xs leading-relaxed whitespace-pre shadow-sm">
-            <pre className="w-full max-w-full text-left mx-auto whitespace-pre font-mono text-[10px] sm:text-xs leading-relaxed text-text-primary">
+          <div className="border-l border-border-warm ml-3 pl-6 space-y-6">
+            <p className="text-left text-[14px] leading-relaxed text-text-muted font-normal">
+              Every data update triggers a GitHub Actions test runner executing 12 deterministic data quality assertions. Only validated data updates populate the dimensional warehouse and Power BI model.
+            </p>
+
+            {/* Clean Subtle Technical Blueprint */}
+            <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-xs leading-relaxed whitespace-pre shadow-sm">
+              <pre className="w-full overflow-x-auto whitespace-pre font-mono text-xs leading-relaxed text-text-primary text-left">
 {`┌────────────────────────────────────────────────────────────────────────┐
 │               AUTOMATED CI/CD DATA QUALITY & BI PIPELINE               │
 └────────────────────────────────────────────────────────────────────────┘
@@ -207,7 +209,8 @@ export const SupplyChainCaseStudy: React.FC = () => {
 │ ├─ Carrier SLA Performance & Route Choke Point Isolation               │
 │ └─ Financial Impact Matrix: Delayed Revenue vs On-Time Deliveries      │
 └────────────────────────────────────────────────────────────────────────┘`}
-            </pre>
+              </pre>
+            </div>
           </div>
         </section>
 

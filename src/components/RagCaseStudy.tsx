@@ -177,13 +177,15 @@ export const RagCaseStudy: React.FC = () => {
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-3 text-left">
             How It Works: Grounded Ingestion &amp; Retrieval Pipeline
           </h2>
-          <p className="text-justify [text-align-last:left] hyphens-auto text-[14px] leading-relaxed text-text-muted font-normal mb-4">
-            Every document follows an audit-grade data pipeline from ingestion to response synthesis, ensuring strict boundary preservation and verified excerpt attribution.
-          </p>
 
-          {/* Clean Subtle Technical Blueprint */}
-          <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-[10px] sm:text-xs leading-relaxed whitespace-pre shadow-sm">
-            <pre className="w-full max-w-full text-left mx-auto whitespace-pre font-mono text-[10px] sm:text-xs leading-relaxed text-text-primary">
+          <div className="border-l border-border-warm ml-3 pl-6 space-y-6">
+            <p className="text-left text-[14px] leading-relaxed text-text-muted font-normal">
+              Every document follows an audit-grade data pipeline from ingestion to response synthesis, ensuring strict boundary preservation and verified excerpt attribution.
+            </p>
+
+            {/* Clean Subtle Technical Blueprint */}
+            <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-xs leading-relaxed whitespace-pre shadow-sm">
+              <pre className="w-full overflow-x-auto whitespace-pre font-mono text-xs leading-relaxed text-text-primary text-left">
 {`┌────────────────────────────────────────────────────────────────────────┐
 │                        RAG PIPELINE ARCHITECTURE                       │
 └────────────────────────────────────────────────────────────────────────┘
@@ -227,7 +229,8 @@ export const RagCaseStudy: React.FC = () => {
 │ 6. Verified Structured Response (FastAPI / Streamlit)                  │
 │    { "answer": "...", "citations": [{ "page": 4, "excerpt": "..." }] } │
 └────────────────────────────────────────────────────────────────────────┘`}
-            </pre>
+              </pre>
+            </div>
           </div>
         </section>
 

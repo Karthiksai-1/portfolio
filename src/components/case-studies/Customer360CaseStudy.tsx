@@ -163,13 +163,15 @@ export const Customer360CaseStudy: React.FC = () => {
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-3 text-left">
             How It Works: Star Schema Warehousing &amp; Statistical Quintiles
           </h2>
-          <p className="text-justify [text-align-last:left] hyphens-auto text-[14px] leading-relaxed text-text-muted font-normal mb-4">
-            Raw transactions are sanitized, transformed into a star schema data warehouse, and processed through SQL window functions to calculate dynamic RFM quintiles and cohort matrices.
-          </p>
 
-          {/* Clean Subtle Technical Blueprint */}
-          <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-[10px] sm:text-xs leading-relaxed whitespace-pre shadow-sm">
-            <pre className="w-full max-w-full text-left mx-auto whitespace-pre font-mono text-[10px] sm:text-xs leading-relaxed text-text-primary">
+          <div className="border-l border-border-warm ml-3 pl-6 space-y-6">
+            <p className="text-left text-[14px] leading-relaxed text-text-muted font-normal">
+              Raw transactions are sanitized, transformed into a star schema data warehouse, and processed through SQL window functions to calculate dynamic RFM quintiles and cohort matrices.
+            </p>
+
+            {/* Clean Subtle Technical Blueprint */}
+            <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-xs leading-relaxed whitespace-pre shadow-sm">
+              <pre className="w-full overflow-x-auto whitespace-pre font-mono text-xs leading-relaxed text-text-primary text-left">
 {`┌────────────────────────────────────────────────────────────────────────┐
 │             DIMENSIONAL STAR SCHEMA & RETENTION PIPELINE               │
 └────────────────────────────────────────────────────────────────────────┘
@@ -211,7 +213,8 @@ export const Customer360CaseStudy: React.FC = () => {
 │ ├─ Page 2: RFM Matrix & Churn Risk Segmentation                        │
 │ └─ Page 3: 12-Month Cohort Retention Heatmap with Decay Curves         │
 └────────────────────────────────────────────────────────────────────────┘`}
-            </pre>
+              </pre>
+            </div>
           </div>
         </section>
 

@@ -49,7 +49,7 @@ export const ProjectsSection: React.FC = () => {
       </div>
 
       {/* Balanced 2-Column Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
         {filteredProjects.map((project) => {
           const codeUrl = (project.githubUrl && project.githubUrl.startsWith('http'))
             ? project.githubUrl
@@ -60,12 +60,12 @@ export const ProjectsSection: React.FC = () => {
           return (
             <div
               key={project.id}
-              className="group relative flex flex-col justify-between h-full bg-surface border border-border-warm rounded-xl p-4 sm:p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:-translate-y-1 hover:border-slate-300 hover:shadow-sm transition-all duration-200 ease-out"
+              className="group relative flex flex-col justify-between h-full rounded-xl border border-border-warm bg-surface p-5 sm:p-6 transition-all duration-200 ease-out hover:border-slate-400/70 hover:shadow-sm hover:-translate-y-1 text-left"
             >
-              <div className="space-y-3">
+              <div className="flex flex-col flex-grow text-left">
                 {/* Top: Title and Domain Badge */}
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-text-primary font-semibold text-base leading-snug">
+                <div className="flex items-start justify-between gap-3 text-left">
+                  <h3 className="text-base sm:text-lg font-semibold text-text-primary tracking-tight group-hover:text-text-muted transition-colors leading-snug text-left">
                     {project.title}
                   </h3>
 
@@ -75,59 +75,63 @@ export const ProjectsSection: React.FC = () => {
                 </div>
 
                 {/* Body: Exactly 2 sentences */}
-                <p className="text-text-muted text-sm leading-relaxed">
+                <p className="text-left text-xs sm:text-sm text-text-muted leading-relaxed my-3 flex-grow">
                   {project.description}
                 </p>
+              </div>
 
-                {/* Bottom: Tech tags */}
-                <div className="flex flex-wrap gap-1.5 pt-1">
+              {/* Pinned Baseline Footer (Tags & Action Links) */}
+              <div className="mt-auto pt-3 border-t border-border-warm flex flex-col gap-3">
+                {/* Tech tags */}
+                <div className="flex flex-wrap gap-1.5">
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-canvas text-text-muted border border-border-warm text-xs px-2.5 py-1 rounded-md font-medium"
+                      className="font-mono text-[11px] px-2 py-0.5 rounded bg-canvas text-text-muted border border-border-warm"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-              </div>
 
-              {/* Action Buttons: Compact & Aligned Horizontally */}
-              <div className="flex flex-wrap items-center gap-2 pt-2 mt-4 border-t border-border-warm">
-                <a
-                  href={codeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/btn w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 bg-text-primary text-surface hover:opacity-90 text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
-                >
-                  <Github className="w-3.5 h-3.5" />
-                  <span>Code</span>
-                  <span className="inline-block transition-transform duration-150 ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span>
-                </a>
+                {/* Action Links */}
+                <div className="flex items-center justify-between pt-1">
+                  {project.caseStudyUrl ? (
+                    <Link
+                      to={project.caseStudyUrl}
+                      className="group/link inline-flex items-center gap-1.5 text-xs font-medium text-text-primary hover:text-accent-text transition-colors"
+                    >
+                      <span>Case Study</span>
+                      <span className="inline-block transition-transform duration-150 group-hover:translate-x-1 group-hover/link:translate-x-1">→</span>
+                    </Link>
+                  ) : <div />}
 
-                {/* Case Study secondary outline button */}
-                {project.caseStudyUrl && (
-                  <Link
-                    to={project.caseStudyUrl}
-                    className="w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 text-text-primary bg-surface border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
-                  >
-                    <span>Case Study</span>
-                    <span className="inline-block transition-transform duration-150 ease-out group-hover:translate-x-1">→</span>
-                  </Link>
-                )}
+                  <div className="flex items-center gap-3">
+                    {hasLiveDemo && (
+                      <a
+                        href={project.liveDemoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn inline-flex items-center gap-1 text-xs font-medium text-text-muted hover:text-text-primary transition-colors"
+                      >
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                        <span>Live Demo</span>
+                        <span className="inline-block transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5">↗</span>
+                      </a>
+                    )}
 
-                {hasLiveDemo && (
-                  <a
-                    href={project.liveDemoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/btn w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 bg-surface text-text-primary border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
-                  >
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                    <span>Live Demo</span>
-                    <span className="inline-block transition-transform duration-150 ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span>
-                  </a>
-                )}
+                    <a
+                      href={codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/btn inline-flex items-center gap-1 text-xs font-medium text-text-muted hover:text-text-primary transition-colors"
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                      <span>Code</span>
+                      <span className="inline-block transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5">↗</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           );

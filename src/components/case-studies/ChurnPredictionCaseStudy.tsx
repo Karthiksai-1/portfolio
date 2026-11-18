@@ -163,13 +163,15 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
           <h2 className="text-xl font-semibold tracking-tight text-text-primary mb-3 text-left">
             How It Works: Tournament Training &amp; Polynomial TreeExplainer
           </h2>
-          <p className="text-justify [text-align-last:left] hyphens-auto text-[14px] leading-relaxed text-text-muted font-normal mb-4">
-            Customer telemetry is ingested, sanitized through scikit-learn transformers, modeled via XGBoost with calibrated probability thresholds, and served with polynomial SHAP feature rankings in an async FastAPI service.
-          </p>
 
-          {/* Clean Subtle Technical Blueprint */}
-          <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-[10px] sm:text-xs leading-relaxed whitespace-pre shadow-sm">
-            <pre className="w-full max-w-full text-left mx-auto whitespace-pre font-mono text-[10px] sm:text-xs leading-relaxed text-text-primary">
+          <div className="border-l border-border-warm ml-3 pl-6 space-y-6">
+            <p className="text-left text-[14px] leading-relaxed text-text-muted font-normal">
+              Customer telemetry is ingested, sanitized through scikit-learn transformers, modeled via XGBoost with calibrated probability thresholds, and served with polynomial SHAP feature rankings in an async FastAPI service.
+            </p>
+
+            {/* Clean Subtle Technical Blueprint */}
+            <div className="w-full max-w-full overflow-x-auto rounded-xl border border-border-warm bg-canvas/70 p-4 sm:p-6 font-mono text-xs leading-relaxed whitespace-pre shadow-sm">
+              <pre className="w-full overflow-x-auto whitespace-pre font-mono text-xs leading-relaxed text-text-primary text-left">
 {`┌────────────────────────────────────────────────────────────────────────┐
 │                END-TO-END ML PIPELINE & SERVING ARCHITECTURE           │
 └────────────────────────────────────────────────────────────────────────┘
@@ -210,7 +212,8 @@ export const ChurnPredictionCaseStudy: React.FC = () => {
 │ Containerized FastAPI Microservice (<45ms P95 Latency)                 │
 │ { "churn_risk": 0.82, "status": "Churn", "top_drivers": [...] }        │
 └────────────────────────────────────────────────────────────────────────┘`}
-            </pre>
+              </pre>
+            </div>
           </div>
         </section>
 

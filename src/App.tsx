@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ExperienceTimeline from './components/ExperienceTimeline';
@@ -13,6 +14,16 @@ import ChurnPredictionCaseStudy from './components/case-studies/ChurnPredictionC
 import ItAssetCaseStudy from './components/case-studies/ItAssetCaseStudy';
 import Customer360CaseStudy from './components/case-studies/Customer360CaseStudy';
 import SupplyChainCaseStudy from './components/case-studies/SupplyChainCaseStudy';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function HomePage() {
   return (
@@ -37,6 +48,7 @@ function HomePage() {
 export function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects/rag-document-assistant" element={<RagCaseStudy />} />
