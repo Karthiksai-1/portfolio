@@ -16,7 +16,7 @@ import SupplyChainCaseStudy from './components/case-studies/SupplyChainCaseStudy
 
 function HomePage() {
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-canvas text-text-primary font-sans antialiased selection:bg-accent-tint selection:text-accent-text">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-canvas text-text-primary font-sans antialiased selection:bg-accent-tint selection:text-accent-text animate-fade-in">
       {/* Sticky Root Navigation */}
       <Navbar />
 

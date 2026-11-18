@@ -18,7 +18,7 @@ export const ContactSection: React.FC = () => {
         {/* Direct Email Link */}
         <a
           href={`mailto:${profile.email}`}
-          className="inline-flex items-center gap-2 text-sm font-medium text-text-primary hover:text-accent-text transition-colors break-all sm:break-normal"
+          className="inline-flex items-center gap-2 text-sm font-medium text-text-primary hover:text-accent-text transition-all duration-150 ease-out active:scale-[0.98] break-all sm:break-normal"
         >
           <Mail className="w-4 h-4 text-text-muted shrink-0" />
           <span>{profile.email}</span>
@@ -29,7 +29,7 @@ export const ContactSection: React.FC = () => {
           href={profile.links.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-text-primary transition-colors"
+          className="inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-text-primary transition-all duration-150 ease-out active:scale-[0.98]"
         >
           <Linkedin className="w-4 h-4 text-text-muted shrink-0" />
           <span>LinkedIn ↗</span>

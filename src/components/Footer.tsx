@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-text-primary transition-colors flex items-center gap-1.5"
+            className="hover:text-text-primary transition-all duration-150 ease-out active:scale-[0.98] flex items-center gap-1.5"
           >
             <FileText className="w-4 h-4 text-text-muted" />
             <span>Resume</span>
@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
             href="https://github.com/Karthiksai-1"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-text-primary transition-colors flex items-center gap-1.5"
+            className="hover:text-text-primary transition-all duration-150 ease-out active:scale-[0.98] flex items-center gap-1.5"
           >
             <Github className="w-4 h-4 text-text-muted" />
             <span>GitHub</span>
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
             href={profile.links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-text-primary transition-colors flex items-center gap-1.5"
+            className="hover:text-text-primary transition-all duration-150 ease-out active:scale-[0.98] flex items-center gap-1.5"
           >
             <Linkedin className="w-4 h-4 text-text-muted" />
             <span>LinkedIn</span>

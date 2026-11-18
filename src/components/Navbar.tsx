@@ -32,7 +32,7 @@ export const Navbar: React.FC = () => {
         {isCaseStudy ? (
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-text-muted hover:text-text-primary transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-text-muted hover:text-text-primary transition-all duration-150 ease-out active:scale-[0.98]"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to projects</span>
@@ -75,7 +75,7 @@ export const Navbar: React.FC = () => {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-text-primary border border-border-warm bg-surface hover:bg-canvas px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-colors"
+            className="flex items-center gap-1.5 text-text-primary border border-border-warm bg-surface hover:bg-canvas px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 ease-out active:scale-[0.98]"
           >
             <FileText className="w-3.5 h-3.5 text-text-muted" />
             <span>Resume</span>

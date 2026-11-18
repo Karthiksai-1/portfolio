@@ -35,7 +35,7 @@ export const ProjectsSection: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
+                className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] ${
                   isActive
                     ? 'bg-text-primary text-surface shadow-sm'
                     : 'bg-surface text-text-muted border border-border-warm hover:bg-canvas'
@@ -60,7 +60,7 @@ export const ProjectsSection: React.FC = () => {
           return (
             <div
               key={project.id}
-              className="flex flex-col justify-between h-full bg-surface border border-border-warm rounded-xl p-4 sm:p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:border-stone-300 transition-all duration-300"
+              className="group relative flex flex-col justify-between h-full bg-surface border border-border-warm rounded-xl p-4 sm:p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] hover:-translate-y-1 hover:border-slate-300 hover:shadow-sm transition-all duration-200 ease-out"
             >
               <div className="space-y-3">
                 {/* Top: Title and Domain Badge */}
@@ -98,19 +98,21 @@ export const ProjectsSection: React.FC = () => {
                   href={codeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 bg-text-primary text-surface hover:opacity-90 text-xs font-medium rounded-lg transition-colors shadow-sm"
+                  className="group/btn w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 bg-text-primary text-surface hover:opacity-90 text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
                 >
                   <Github className="w-3.5 h-3.5" />
-                  <span>Code ↗</span>
+                  <span>Code</span>
+                  <span className="inline-block transition-transform duration-150 ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span>
                 </a>
 
                 {/* Case Study secondary outline button */}
                 {project.caseStudyUrl && (
                   <Link
                     to={project.caseStudyUrl}
-                    className="w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 text-text-primary bg-surface border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-colors shadow-sm"
+                    className="w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 text-text-primary bg-surface border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
                   >
-                    <span>Case Study →</span>
+                    <span>Case Study</span>
+                    <span className="inline-block transition-transform duration-150 ease-out group-hover:translate-x-1">→</span>
                   </Link>
                 )}
 
@@ -119,10 +121,11 @@ export const ProjectsSection: React.FC = () => {
                     href={project.liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 bg-surface text-text-primary border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-colors shadow-sm"
+                    className="group/btn w-fit px-3.5 py-1.5 sm:px-4 sm:py-2 inline-flex items-center gap-1.5 bg-surface text-text-primary border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
                   >
                     <ArrowUpRight className="w-3.5 h-3.5" />
                     <span>Live Demo</span>
+                    <span className="inline-block transition-transform duration-150 ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">↗</span>
                   </a>
                 )}
               </div>

@@ -33,7 +33,7 @@ export const Hero: React.FC = () => {
             e.preventDefault();
             document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-text-primary text-surface hover:opacity-90 text-xs font-medium px-5 py-2.5 rounded-xl transition-colors shadow-sm text-center"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-text-primary text-surface hover:opacity-90 text-xs font-medium px-5 py-2.5 rounded-xl transition-all duration-150 ease-out active:scale-[0.98] shadow-sm text-center"
         >
           <span>View Projects</span>
           <ArrowRight className="w-4 h-4" />
@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-surface text-text-primary border border-border-warm hover:bg-canvas px-5 py-2.5 rounded-xl font-medium shadow-sm transition-all text-sm text-center"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-surface text-text-primary border border-border-warm hover:bg-canvas px-5 py-2.5 rounded-xl font-medium shadow-sm transition-all duration-150 ease-out active:scale-[0.98] text-sm text-center"
         >
           <Download className="w-4 h-4 text-text-muted" />
           <span>Resume</span>
@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
             e.preventDefault();
             document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-surface text-text-primary border border-border-warm hover:bg-canvas px-5 py-2.5 rounded-xl font-medium shadow-sm transition-all text-sm text-center"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-surface text-text-primary border border-border-warm hover:bg-canvas px-5 py-2.5 rounded-xl font-medium shadow-sm transition-all duration-150 ease-out active:scale-[0.98] text-sm text-center"
         >
           <Mail className="w-4 h-4 text-text-muted" />
           <span>Contact Me</span>

@@ -11,7 +11,7 @@ export const ItAssetCaseStudy: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-canvas text-text-primary font-sans antialiased selection:bg-accent-tint selection:text-accent-text">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-canvas text-text-primary font-sans antialiased selection:bg-accent-tint selection:text-accent-text animate-fade-in">
       {/* Context-Aware Sticky Navbar */}
       <Navbar />
 
@@ -73,7 +73,7 @@ export const ItAssetCaseStudy: React.FC = () => {
               href="https://github.com/Karthiksai-1"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-text-primary text-surface hover:opacity-90 text-xs font-medium rounded-lg transition-colors shadow-sm"
+              className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-text-primary text-surface hover:opacity-90 text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
             >
               <Github className="w-3.5 h-3.5" />
               <span>View on GitHub ↗</span>
@@ -258,7 +258,7 @@ export const ItAssetCaseStudy: React.FC = () => {
         <div className="pt-6 border-t border-border-warm flex flex-wrap items-center justify-between gap-4 text-left">
           <Link
             to="/"
-            className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-surface text-text-primary border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-colors shadow-sm"
+            className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-surface text-text-primary border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>← Back to Projects</span>
@@ -268,7 +268,7 @@ export const ItAssetCaseStudy: React.FC = () => {
             href="https://github.com/Karthiksai-1"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-text-primary text-surface hover:opacity-90 text-xs font-medium rounded-lg transition-colors shadow-sm"
+            className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-text-primary text-surface hover:opacity-90 text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
           >
             <Github className="w-3.5 h-3.5" />
             <span>View Code ↗</span>
