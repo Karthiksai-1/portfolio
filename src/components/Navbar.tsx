@@ -1,9 +1,10 @@
-import { useLocation, Link } from 'react-router-dom';
-import { Github, Linkedin, FileText, ArrowLeft } from 'lucide-react';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { Github, Linkedin, FileText } from 'lucide-react';
 import { profile } from '../data/portfolioData';
 
 export const Navbar: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isCaseStudy = location.pathname.startsWith('/projects/');
 
   const navLinks = [
@@ -15,9 +16,11 @@ export const Navbar: React.FC = () => {
   ];
 
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.replace('#', '');
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    if (isCaseStudy) {
+      navigate('/' + href);
+    } else {
       const element = document.getElementById(targetId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -26,59 +29,45 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-canvas/90 backdrop-blur-md border-b border-border-warm text-text-primary transition-colors">
-      <div className="max-w-4xl mx-auto px-4 py-3 sm:px-6 h-14 flex items-center justify-between w-full">
-        {/* Left: Context-Aware Back Link or Logo/Name */}
-        {isCaseStudy ? (
-          <Link
-            to="/"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-text-muted hover:text-text-primary transition-all duration-150 ease-out active:scale-[0.98]"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to projects</span>
-          </Link>
-        ) : (
-          <a
-            href="#about"
-            onClick={(e) => handleAnchorClick(e, '#about')}
-            className="text-sm font-semibold tracking-tight text-text-primary hover:text-accent-text transition-colors flex items-center gap-2"
-          >
-            <span className="w-2 h-2 rounded-full bg-accent-text" />
-            <span>Karthikeya</span>
-          </a>
-        )}
+    <header className="sticky top-0 z-50 w-full border-b border-border-warm bg-canvas/85 backdrop-blur-md transition-all">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between w-full">
+        {/* Left: Direct Link to Homepage */}
+        <Link
+          to="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="text-sm font-semibold tracking-tight text-text-primary hover:text-accent-text transition-colors flex items-center gap-2"
+        >
+          <span className="w-2 h-2 rounded-full bg-accent-text" />
+          <span className="hidden sm:inline">Nirudi Sai Karthikeya</span>
+          <span className="sm:hidden">Karthikeya</span>
+        </Link>
 
         {/* Right Navigation & Actions */}
         <div className="flex items-center gap-3 sm:gap-6">
-          {/* Hide anchor links on mobile and case studies */}
-          {!isCaseStudy && (
-            <>
-              <nav className="hidden md:flex items-center gap-6 text-sm text-text-muted">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={(e) => handleAnchorClick(e, link.href)}
-                    className="hover:text-text-primary transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </nav>
+          <nav className="hidden md:flex items-center gap-6 text-sm text-text-muted">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={isCaseStudy ? `/${link.href}` : link.href}
+                onClick={(e) => handleAnchorClick(e, link.href)}
+                className="hover:text-text-primary transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
 
-              <div className="hidden md:block h-3.5 w-px bg-border-warm" />
-            </>
-          )}
+          <div className="hidden md:block h-3.5 w-px bg-border-warm" />
 
-          {/* Resume button in navbar */}
+          {/* Resume button pinned to the right side */}
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-text-primary border border-border-warm bg-surface hover:bg-canvas px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 ease-out active:scale-[0.98]"
+            className="flex items-center gap-1.5 text-text-primary border border-border-warm bg-surface hover:bg-canvas px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
           >
             <FileText className="w-3.5 h-3.5 text-text-muted" />
-            <span>Resume</span>
+            <span>Resume ↗</span>
           </a>
 
           {/* Social Icons */}

@@ -16,18 +16,27 @@ import Customer360CaseStudy from './components/case-studies/Customer360CaseStudy
 import SupplyChainCaseStudy from './components/case-studies/SupplyChainCaseStudy';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+      return;
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 }
 
 function HomePage() {
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-canvas text-text-primary font-sans antialiased selection:bg-accent-tint selection:text-accent-text animate-fade-in">
+    <div className="min-h-screen w-full max-w-full overflow-x-clip bg-canvas text-text-primary font-sans antialiased selection:bg-accent-tint selection:text-accent-text animate-fade-in">
       {/* Sticky Root Navigation */}
       <Navbar />
 
