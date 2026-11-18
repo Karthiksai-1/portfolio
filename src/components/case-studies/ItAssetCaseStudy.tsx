@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Github } from 'lucide-react';
 import Navbar from '../Navbar';
@@ -23,7 +23,7 @@ export const ItAssetCaseStudy: React.FC = () => {
             to="/#projects"
             className="group inline-flex items-center gap-1.5 text-xs font-medium text-text-muted hover:text-text-primary transition-colors"
           >
-            <span className="inline-block transition-transform duration-150 group-hover:-translate-x-1">&larr;</span>
+            <span className="inline-block transition-transform duration-150 group-hover:-translate-x-1">←</span>
             <span>All projects</span>
           </Link>
         </div>
@@ -78,7 +78,7 @@ export const ItAssetCaseStudy: React.FC = () => {
             >
               <Github className="w-3.5 h-3.5" />
               <span>View on GitHub</span>
-              <span className="inline-block transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">&nearr;</span>
+              <span className="inline-block transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
             </a>
           </div>
         </header>
@@ -381,7 +381,7 @@ export const ItAssetCaseStudy: React.FC = () => {
             to="/#projects"
             className="group inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200/80 bg-white/80 text-xs sm:text-sm font-medium text-slate-700 hover:border-slate-300 hover:text-slate-900 transition-all shadow-xs"
           >
-            <span className="inline-block transition-transform duration-150 group-hover:-translate-x-1">&larr;</span>
+            <span className="inline-block transition-transform duration-150 group-hover:-translate-x-1">←</span>
             <span>Back to Projects</span>
           </Link>
 
@@ -393,7 +393,7 @@ export const ItAssetCaseStudy: React.FC = () => {
           >
             <Github className="w-3.5 h-3.5" />
             <span>View Code</span>
-            <span className="inline-block transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">&nearr;</span>
+            <span className="inline-block transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
           </a>
         </div>
 
