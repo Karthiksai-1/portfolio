@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 import Navbar from '../Navbar';
 import ContactSection from '../ContactSection';
 import Footer from '../Footer';
@@ -20,10 +20,11 @@ export const LlmTestingCaseStudy: React.FC = () => {
         {/* Breadcrumb directly above project title */}
         <div className="text-left">
           <Link
-            to="/"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-text-muted hover:text-text-primary transition-colors"
+            to="/#projects"
+            className="group inline-flex items-center gap-1.5 text-xs font-medium text-text-muted hover:text-text-primary transition-colors"
           >
-            ← All projects
+            <span className="inline-block transition-transform duration-150 group-hover:-translate-x-1">&larr;</span>
+            <span>All projects</span>
           </Link>
         </div>
 
@@ -73,10 +74,11 @@ export const LlmTestingCaseStudy: React.FC = () => {
               href="https://github.com/Karthiksai-1"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-text-primary text-surface hover:opacity-90 text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
+              className="group inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-200/80 bg-white/80 text-xs sm:text-sm font-medium text-slate-700 hover:border-slate-300 hover:text-slate-900 transition-all shadow-xs"
             >
               <Github className="w-3.5 h-3.5" />
-              <span>View on GitHub ↗</span>
+              <span>View on GitHub</span>
+              <span className="inline-block transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">&nearr;</span>
             </a>
           </div>
         </header>
@@ -368,12 +370,12 @@ export const LlmTestingCaseStudy: React.FC = () => {
         </section>
 
         {/* Bottom Navigation */}
-        <div className="pt-6 border-t border-border-warm flex flex-wrap items-center justify-between gap-4 text-left">
+        <div className="pt-6 border-t border-slate-200/70 flex flex-wrap items-center justify-between gap-4 text-left">
           <Link
-            to="/"
-            className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-surface text-text-primary border border-border-warm hover:bg-canvas text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
+            to="/#projects"
+            className="group inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200/80 bg-white/80 text-xs sm:text-sm font-medium text-slate-700 hover:border-slate-300 hover:text-slate-900 transition-all shadow-xs"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
+            <span className="inline-block transition-transform duration-150 group-hover:-translate-x-1">&larr;</span>
             <span>Back to Projects</span>
           </Link>
 
@@ -381,10 +383,11 @@ export const LlmTestingCaseStudy: React.FC = () => {
             href="https://github.com/Karthiksai-1"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-fit px-4 py-2 inline-flex items-center gap-1.5 bg-text-primary text-surface hover:opacity-90 text-xs font-medium rounded-lg transition-all duration-150 ease-out active:scale-[0.98] shadow-sm"
+            className="group inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-200/80 bg-white/80 text-xs sm:text-sm font-medium text-slate-700 hover:border-slate-300 hover:text-slate-900 transition-all shadow-xs"
           >
             <Github className="w-3.5 h-3.5" />
-            <span>View Code ↗</span>
+            <span>View Code</span>
+            <span className="inline-block transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">&nearr;</span>
           </a>
         </div>
 

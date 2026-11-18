@@ -1,43 +1,34 @@
-import { Github, Linkedin, FileText } from 'lucide-react';
 import { profile } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-border-warm bg-surface py-8 text-text-muted text-sm -mx-4 sm:-mx-6 px-4 sm:px-6 -mb-8 sm:-mb-12 md:-mb-16 mt-16 w-auto">
-      <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Clean copyright text on the left */}
-        <div className="text-text-muted font-medium text-xs sm:text-sm">
-          © 2026 Nirudi Sai Karthikeya
-        </div>
-
-        {/* Resume, GitHub, and LinkedIn links on the right */}
-        <div className="flex items-center gap-5 text-text-muted">
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-text-primary transition-all duration-150 ease-out active:scale-[0.98] flex items-center gap-1.5"
+    <footer className="w-full border-t border-slate-200/70 mt-20 py-8 sm:py-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 Nirudi Sai Karthikeya</p>
+        <div className="flex items-center gap-6">
+          <a 
+            href="/resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-slate-900 transition-colors"
           >
-            <FileText className="w-4 h-4 text-text-muted" />
-            <span>Resume</span>
+            Resume ↗
           </a>
-          <a
-            href="https://github.com/Karthiksai-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-text-primary transition-all duration-150 ease-out active:scale-[0.98] flex items-center gap-1.5"
+          <a 
+            href={profile.links.github} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-slate-900 transition-colors"
           >
-            <Github className="w-4 h-4 text-text-muted" />
-            <span>GitHub</span>
+            GitHub ↗
           </a>
-          <a
-            href={profile.links.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-text-primary transition-all duration-150 ease-out active:scale-[0.98] flex items-center gap-1.5"
+          <a 
+            href={profile.links.linkedin} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:text-slate-900 transition-colors"
           >
-            <Linkedin className="w-4 h-4 text-text-muted" />
-            <span>LinkedIn</span>
+            LinkedIn ↗
           </a>
         </div>
       </div>

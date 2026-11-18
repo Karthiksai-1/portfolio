@@ -17,7 +17,7 @@ export const ExperienceTimeline: React.FC = () => {
         {experience.map((item) => (
           <div
             key={item.id}
-            className="bg-surface border border-border-warm rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-stone-300 transition-all duration-300 space-y-4"
+            className="bg-white/50 backdrop-blur-xs border border-slate-200/70 rounded-2xl p-6 shadow-xs hover:bg-white/80 hover:border-slate-300 transition-all duration-300 space-y-4"
           >
             {/* Header: Role, Company, Date */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">

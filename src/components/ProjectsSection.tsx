@@ -60,7 +60,7 @@ export const ProjectsSection: React.FC = () => {
           return (
             <div
               key={project.id}
-              className="group relative flex flex-col justify-between h-full rounded-xl border border-border-warm bg-surface p-5 sm:p-6 transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-sm text-left"
+              className="group relative flex flex-col justify-between h-full rounded-xl border border-slate-200/70 bg-white/50 backdrop-blur-xs p-5 sm:p-6 transition-all duration-200 hover:-translate-y-1 hover:bg-white/80 hover:border-slate-300 hover:shadow-sm text-left"
             >
               <div className="flex flex-col flex-grow text-left">
                 {/* Top: Title and Domain Badge */}

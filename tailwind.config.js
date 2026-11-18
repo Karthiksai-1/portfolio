@@ -49,6 +49,9 @@ export default {
       animation: {
         'fade-in': 'fadeIn 200ms ease-out forwards',
       },
+      backdropBlur: {
+        xs: '2px',
+      },
     },
   },
   plugins: [],

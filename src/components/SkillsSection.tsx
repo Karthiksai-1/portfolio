@@ -35,7 +35,7 @@ export const SkillsSection: React.FC = () => {
         {categories.map((cat) => (
           <div
             key={cat.title}
-            className="bg-surface border border-border-warm shadow-sm rounded-2xl p-6 space-y-3 hover:shadow-md hover:border-stone-300 transition-all duration-300"
+            className="bg-white/50 backdrop-blur-xs border border-slate-200/70 rounded-2xl p-6 shadow-xs hover:bg-white/80 hover:border-slate-300 transition-all duration-300 space-y-3"
           >
             <h3 className="text-sm font-semibold text-text-primary uppercase tracking-wider">
               {cat.title}

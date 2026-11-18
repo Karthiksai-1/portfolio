@@ -48,8 +48,8 @@ function HomePage() {
         <SkillsSection />
         <EducationSection />
         <ContactSection />
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 }

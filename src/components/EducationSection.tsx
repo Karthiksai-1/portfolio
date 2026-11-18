@@ -17,7 +17,7 @@ export const EducationSection: React.FC = () => {
         {education.map((item, idx) => (
           <div
             key={idx}
-            className="bg-surface border border-border-warm shadow-sm rounded-2xl p-5 sm:p-6 hover:shadow-md hover:border-stone-300 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4"
+            className="bg-white/50 backdrop-blur-xs border border-slate-200/70 rounded-2xl p-5 sm:p-6 shadow-xs hover:bg-white/80 hover:border-slate-300 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4"
           >
             <div className="flex items-start gap-3.5">
               <div className="w-10 h-10 rounded-xl bg-canvas border border-border-warm text-text-primary flex items-center justify-center shrink-0">
